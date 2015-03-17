@@ -5,10 +5,12 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use frontend\widgets\Alert;
+use raoul2000\bootswatch\BootswatchAsset;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+BootswatchAsset::$theme = 'Flatly';
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
