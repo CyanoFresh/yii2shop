@@ -14,15 +14,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'parent_id')->textInput() ?>
 
-    <?= $form->field($model, 'slug')->textInput(['maxlength' => 255]) ?>
-
     <?= $form->field($model, 'name')->textInput(['maxlength' => 255]) ?>
 
     <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'description')->textarea(['rows' => 4]) ?>
 
-    <?= $form->field($model, 'keywords')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'keywords')->textarea(['rows' => 4]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('categories', 'Create') : Yii::t('categories', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

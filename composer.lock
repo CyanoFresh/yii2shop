@@ -4,8 +4,51 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "47b3f3ff9dd4b3c5d6d290988bedd088",
+    "hash": "1a6aa547722d850620e919e07e5203f9",
     "packages": [
+        {
+            "name": "2amigos/yii2-transliterator-helper",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/2amigos/yii2-transliterator-helper.git",
+                "reference": "b859f5205bcb14409a75687241a94331a0ff0f2b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/2amigos/yii2-transliterator-helper/zipball/b859f5205bcb14409a75687241a94331a0ff0f2b",
+                "reference": "b859f5205bcb14409a75687241a94331a0ff0f2b",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "dosamigos\\transliterator\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Antonio Ramirez",
+                    "email": "ramirez.cobos@gmail.com",
+                    "homepage": "http://www.ramirezcobos.com"
+                }
+            ],
+            "description": "Transliterator Helper for Yii2.",
+            "keywords": [
+                "extension",
+                "helper",
+                "transliterator",
+                "yii"
+            ],
+            "time": "2014-01-17 15:55:42"
+        },
         {
             "name": "bower-asset/bootstrap",
             "version": "v3.3.2",
@@ -1862,6 +1905,52 @@
                 "yii2"
             ],
             "time": "2015-03-01 06:22:44"
+        },
+        {
+            "name": "zelenin/yii2-slug-behavior",
+            "version": "0.2.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zelenin/yii2-slug-behavior.git",
+                "reference": "3306bed1aaa895ddd571d7289bcb2bccefef4e9a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zelenin/yii2-slug-behavior/zipball/3306bed1aaa895ddd571d7289bcb2bccefef4e9a",
+                "reference": "3306bed1aaa895ddd571d7289bcb2bccefef4e9a",
+                "shasum": ""
+            },
+            "require": {
+                "2amigos/yii2-transliterator-helper": "~0.1@stable",
+                "yiisoft/yii2": "~2"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "Zelenin\\yii\\behaviors\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aleksandr Zelenin",
+                    "email": "aleksandr@zelenin.me",
+                    "homepage": "http://zelenin.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Yii2 slug behavior",
+            "homepage": "https://github.com/zelenin/yii2-slug-behavior",
+            "keywords": [
+                "Behavior",
+                "slug",
+                "yii",
+                "yii2"
+            ],
+            "time": "2014-11-16 00:00:00"
         }
     ],
     "packages-dev": [
@@ -2165,7 +2254,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "zelenin/yii2-slug-behavior": 0
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

@@ -29,8 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'date',
+            'created_at',
             'status',
+            'total',
             'user_id',
             'email:email',
             'name',

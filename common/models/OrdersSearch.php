@@ -18,7 +18,7 @@ class OrdersSearch extends Orders
     public function rules()
     {
         return [
-            [['id', 'date', 'status', 'user_id'], 'integer'],
+            [['id', 'created_at', 'status', 'total', 'user_id'], 'integer'],
             [['email', 'name', 'phone', 'address', 'message', 'data'], 'safe'],
         ];
     }
@@ -57,8 +57,9 @@ class OrdersSearch extends Orders
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'date' => $this->date,
+            'created_at' => $this->created_at,
             'status' => $this->status,
+            'total' => $this->total,
             'user_id' => $this->user_id,
         ]);
 

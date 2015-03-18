@@ -35,11 +35,11 @@ class Categories extends ActiveRecord
         return [
             [
                 'class' => SluggableBehavior::className(),
-                'attribute' => 'title',
-                // 'slugAttribute' => 'slug',
+                'attribute' => 'name',
             ],
         ];
     }
+
     /**
      * @inheritdoc
      */

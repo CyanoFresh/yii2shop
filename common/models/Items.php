@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use Zelenin\yii\behaviors\Slug;
 use yii\db\ActiveRecord;
 
 /**
@@ -36,7 +37,7 @@ class Items extends ActiveRecord
     public function rules()
     {
         return [
-            [['category_id', 'created_at', 'updated_at', 'slug', 'name', 'short', 'full', 'description', 'keywords'], 'required'],
+            [['category_id', 'name', 'short', 'full', 'description', 'keywords'], 'required'],
             [['category_id', 'created_at', 'updated_at'], 'integer'],
             [['short', 'full', 'description', 'keywords'], 'string'],
             [['slug', 'name'], 'string', 'max' => 255]
@@ -62,12 +63,18 @@ class Items extends ActiveRecord
         ];
     }
 
+    /**
+     * @inheritdoc
+     */
     public function behaviors()
     {
         return [
             'timestamp' => [
                 'class' => TimestampBehavior::className(),
             ],
+            'slug' => [
+                'class' => Slug::className(),
+            ]
         ];
     }
 }

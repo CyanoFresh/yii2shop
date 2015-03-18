@@ -18,7 +18,8 @@
         "yiisoft/yii2-swiftmailer": "*",
         "omnilight/yii2-shopping-cart": "*",
         "raoul2000/yii2-bootswatch-asset": "*",
-        "kartik-v/yii2-widgets": "*"
+        "kartik-v/yii2-widgets": "*",
+        "zelenin/yii2-slug-behavior": "~0.2@stable"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
