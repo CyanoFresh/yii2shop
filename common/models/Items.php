@@ -12,6 +12,7 @@ use yii\db\ActiveRecord;
  *
  * @property integer $id
  * @property integer $category_id
+ * @property integer $price
  * @property integer $created_at
  * @property integer $updated_at
  * @property string $slug
@@ -37,8 +38,8 @@ class Items extends ActiveRecord
     public function rules()
     {
         return [
-            [['category_id', 'name', 'short', 'full', 'description', 'keywords'], 'required'],
-            [['category_id', 'created_at', 'updated_at'], 'integer'],
+            [['category_id', 'price', 'name', 'short'], 'required'],
+            [['category_id', 'price', 'created_at', 'updated_at'], 'integer'],
             [['short', 'full', 'description', 'keywords'], 'string'],
             [['slug', 'name'], 'string', 'max' => 255]
         ];
@@ -52,6 +53,7 @@ class Items extends ActiveRecord
         return [
             'id' => Yii::t('items', 'ID'),
             'category_id' => Yii::t('items', 'Category ID'),
+            'price' => Yii::t('items', 'Price'),
             'created_at' => Yii::t('items', 'Created At'),
             'updated_at' => Yii::t('items', 'Updated At'),
             'slug' => Yii::t('items', 'Slug'),
@@ -74,6 +76,7 @@ class Items extends ActiveRecord
             ],
             'slug' => [
                 'class' => Slug::className(),
+                'attribute' => ['id', 'name'],
             ]
         ];
     }

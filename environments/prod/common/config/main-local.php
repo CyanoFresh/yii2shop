@@ -12,5 +12,11 @@ return [
             'class' => 'yii\swiftmailer\Mailer',
             'viewPath' => '@common/mail',
         ],
+        'urlManager' => [
+            'baseUrl' => '//admin.yii2shop/',
+        ],
+        'urlManagerFrontEnd' => [
+            'baseUrl' => '//yii2shop/',
+        ],
     ],
 ];

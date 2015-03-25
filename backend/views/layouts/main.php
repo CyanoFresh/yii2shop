@@ -4,10 +4,12 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use raoul2000\bootswatch\BootswatchAsset;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+BootswatchAsset::$theme = 'Sandstone';
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -17,7 +19,7 @@ AppAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
+    <title><?= Html::encode($this->title) . ' - ' . Yii::$app->name ?></title>
     <?php $this->head() ?>
 </head>
 <body>
@@ -25,20 +27,23 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'My Company',
+                'brandLabel' => Yii::$app->name,
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
                 ],
             ]);
             $menuItems = [
-                ['label' => 'Home', 'url' => ['/site/index']],
-                ['label' => 'Items', 'url' => ['/items/index']],
-                ['label' => 'Categories', 'url' => ['/categories/index']],
-                ['label' => 'Orders', 'url' => ['/orders/index']],
+                ['label' => Yii::t('backend', 'Home'), 'url' => ['/site/index']],
+                //['label' => 'Items', 'url' => ['/items/index']],
+                ['label' => Yii::t('backend', 'Products'), 'url' => ['/product/index']],
+                ['label' => Yii::t('backend', 'Categories'), 'url' => ['/category/index']],
+                ['label' => Yii::t('backend', 'Statuses'), 'url' => ['/status/index']],
+                ['label' => Yii::t('backend', 'Orders'), 'url' => ['/orders/index']],
+                ['label' => Yii::t('backend', 'Site'), 'url' => Yii::$app->urlManagerFrontEnd->baseUrl, 'options'=>['target' => '_blank'], 'linkOptions' => ['target' => '_blank']],
             ];
             if (Yii::$app->user->isGuest) {
-                $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+                $menuItems[] = ['label' => Yii::t('backend', 'Login'), 'url' => ['/site/login']];
             } else {
                 $menuItems[] = [
                     'label' => 'Logout (' . Yii::$app->user->identity->username . ')',

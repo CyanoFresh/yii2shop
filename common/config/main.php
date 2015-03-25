@@ -17,5 +17,17 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
         ],
+        'urlManagerFrontEnd' => [
+            'class' => 'yii\web\urlManager',
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+        ],
+        'formatter' => [
+            'datetimeFormat' => 'php:d-m-Y H:i:s',
+            'timeFormat' => 'php:H:i:s',
+            'currencyCode' => 'USD',
+//            'locale' => 'ru-RU',
+        ],
     ],
+    'modules' => [],
 ];

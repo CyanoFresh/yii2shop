@@ -5,12 +5,12 @@ namespace common\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Items;
+use common\models\ProductImage;
 
 /**
- * ItemsSearch represents the model behind the search form about `common\models\Items`.
+ * ProductImageSearch represents the model behind the search form about `common\models\ProductImage`.
  */
-class ItemsSearch extends Items
+class ProductImageSearch extends ProductImage
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class ItemsSearch extends Items
     public function rules()
     {
         return [
-            [['id', 'category_id', 'price', 'created_at', 'updated_at'], 'integer'],
-            [['slug', 'name', 'short', 'full', 'description', 'keywords'], 'safe'],
+            [['id', 'product_id', 'main'], 'integer'],
+            [['title', 'alt'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class ItemsSearch extends Items
      */
     public function search($params)
     {
-        $query = Items::find();
+        $query = ProductImage::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -57,18 +57,12 @@ class ItemsSearch extends Items
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'category_id' => $this->category_id,
-            'price' => $this->price,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'product_id' => $this->product_id,
+            'main' => $this->main,
         ]);
 
-        $query->andFilterWhere(['like', 'slug', $this->slug])
-            ->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'short', $this->short])
-            ->andFilterWhere(['like', 'full', $this->full])
-            ->andFilterWhere(['like', 'description', $this->description])
-            ->andFilterWhere(['like', 'keywords', $this->keywords]);
+        $query->andFilterWhere(['like', 'title', $this->title])
+            ->andFilterWhere(['like', 'alt', $this->alt]);
 
         return $dataProvider;
     }

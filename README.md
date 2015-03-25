@@ -1,14 +1,7 @@
-Yii 2 Advanced Application Template
+Yii2shop project
 ===================================
 
-Yii 2 Advanced Application Template is a skeleton Yii 2 application best for
-developing complex Web applications with multiple tiers.
-
-The template includes three tiers: front end, back end, and console, each of which
-is a separate Yii application.
-
-The template is designed to work in a team development environment. It supports
-deploying the application in different environments.
+This is a e-commerce CMS built on Yii2 Advanced Application Template
 
 
 DIRECTORY STRUCTURE
@@ -60,8 +53,8 @@ INSTALLATION
 
 ### Install from an Archive File
 
-Extract the archive file downloaded from [yiiframework.com](http://www.yiiframework.com/download/) to
-a directory named `advanced` that is directly under the Web root.
+Extract the archive file downloaded from [github.com](https://github.com/samdark/yii2-shop/archive/master.zip) to
+a directory named `yii2shop` that is directly under the Web root.
 
 Then follow the instructions given in "GETTING STARTED".
 
@@ -93,5 +86,4 @@ the installed application. You only need to do these once for all.
 - for frontend `/path/to/yii-application/frontend/web/` and using the URL `http://frontend/`
 - for backend `/path/to/yii-application/backend/web/` and using the URL `http://backend/`
 
-To login into the application, you need to first sign up, with any of your email address, username and password.
-Then, you can login into the application with same email address and password at any time.
+To login into the application, you need to use admin / admin

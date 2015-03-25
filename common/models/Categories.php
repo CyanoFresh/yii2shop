@@ -3,8 +3,8 @@
 namespace common\models;
 
 use Yii;
-use yii\behaviors\SluggableBehavior;
 use yii\db\ActiveRecord;
+use Zelenin\yii\behaviors\Slug;
 
 /**
  * This is the model class for table "{{%categories}}".
@@ -33,10 +33,10 @@ class Categories extends ActiveRecord
     public function behaviors()
     {
         return [
-            [
-                'class' => SluggableBehavior::className(),
-                'attribute' => 'name',
-            ],
+            'slug' => [
+                'class' => Slug::className(),
+                'attribute' => ['id', 'name'],
+            ]
         ];
     }
 
@@ -46,7 +46,7 @@ class Categories extends ActiveRecord
     public function rules()
     {
         return [
-            [['parent_id', 'slug', 'name', 'body', 'description', 'keywords'], 'required'],
+            [['name', 'body'], 'required'],
             [['parent_id'], 'integer'],
             [['body', 'description', 'keywords'], 'string'],
             [['slug', 'name'], 'string', 'max' => 255]

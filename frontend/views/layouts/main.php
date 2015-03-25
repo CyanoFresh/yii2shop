@@ -10,7 +10,7 @@ use raoul2000\bootswatch\BootswatchAsset;
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-BootswatchAsset::$theme = 'Flatly';
+BootswatchAsset::$theme = 'Sandstone';
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -28,7 +28,7 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'My Company',
+                'brandLabel' => 'Yii2shop',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',

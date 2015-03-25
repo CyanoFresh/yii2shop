@@ -5,12 +5,12 @@ namespace common\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Items;
+use common\models\Product;
 
 /**
- * ItemsSearch represents the model behind the search form about `common\models\Items`.
+ * ProductSearch represents the model behind the search form about `common\models\Product`.
  */
-class ItemsSearch extends Items
+class ProductSearch extends Product
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class ItemsSearch extends Items
     public function rules()
     {
         return [
-            [['id', 'category_id', 'price', 'created_at', 'updated_at'], 'integer'],
-            [['slug', 'name', 'short', 'full', 'description', 'keywords'], 'safe'],
+            [['id', 'category_id', 'status_id', 'price'], 'integer'],
+            [['date', 'slug', 'name', 'description', 'meta_description', 'meta_keywords'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class ItemsSearch extends Items
      */
     public function search($params)
     {
-        $query = Items::find();
+        $query = Product::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -58,17 +58,16 @@ class ItemsSearch extends Items
         $query->andFilterWhere([
             'id' => $this->id,
             'category_id' => $this->category_id,
+            'status_id' => $this->status_id,
             'price' => $this->price,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'date' => $this->date,
         ]);
 
         $query->andFilterWhere(['like', 'slug', $this->slug])
             ->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'short', $this->short])
-            ->andFilterWhere(['like', 'full', $this->full])
             ->andFilterWhere(['like', 'description', $this->description])
-            ->andFilterWhere(['like', 'keywords', $this->keywords]);
+            ->andFilterWhere(['like', 'meta_description', $this->meta_description])
+            ->andFilterWhere(['like', 'meta_keywords', $this->meta_keywords]);
 
         return $dataProvider;
     }
