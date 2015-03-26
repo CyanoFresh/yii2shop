@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'description:ntext',
             'parent_id',
-            'slug',
+            // 'slug',
             // 'meta_description',
             // 'meta_keywords',
 
