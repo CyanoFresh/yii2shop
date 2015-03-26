@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\Image;
 use Yii;
 use common\models\Product;
 use common\models\ProductSearch;
@@ -73,17 +74,36 @@ class ProductController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Product();
+        $model = new Product(['scenario' => 'create']);
+        $model->date = date('d-m-Y H:i:s');
 
-        $model->date = date('d-m-Y H:i');
+        if ($model->load(Yii::$app->request->post())) {
+            $model->image = UploadedFile::getInstance($model, 'image');
+            $model->images = UploadedFile::getInstances($model, 'images');
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            if ($model->validate() && $model->save()) {
+                $dir = Yii::getAlias('@frontend/web/uploads/product/' . $model->id);
+                FileHelper::createDirectory($dir);
+
+                $model->image->saveAs($dir . '/main.jpg');
+
+                if ($model->images) {
+                    foreach ($model->images as $image) {
+                        $imageModel = new Image();
+                        $imageModel->model_id = $model->id;
+                        $imageModel->save();
+
+                        $image->saveAs($dir . '/' . $imageModel->id . '.jpg');
+                    }
+                }
+            }
+
             return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
         }
+
+        return $this->render('create', [
+            'model' => $model,
+        ]);
     }
 
     /**
@@ -96,15 +116,47 @@ class ProductController extends Controller
     {
         $model = $this->findModel($id);
 
-        $model->scenario = 'update';
+        if ($model->load(Yii::$app->request->post())) {
+            $model->image = UploadedFile::getInstance($model, 'image');
+            $model->images = UploadedFile::getInstances($model, 'images');
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            if ($model->validate() && $model->save()) {
+                $dir = Yii::getAlias('@frontend/web/uploads/product/' . $model->id);
+
+                if ($model->image) {
+                    $model->image->saveAs($dir . '/main.jpg');
+                }
+
+                if ($model->images) {
+                    $imageModels = Image::findAll(['model_id' => $model->id]);
+                    if ($imageModels) {
+                        foreach ($imageModels as $image) {
+                            $file = $dir . '/' . $image->id . '.jpg';
+
+                            if (file_exists($file)) {
+                                unlink($file);
+                            }
+
+                            $image->delete();
+                        }
+                    }
+
+                    foreach ($model->images as $image) {
+                        $imageModel = new Image();
+                        $imageModel->model_id = $model->id;
+                        $imageModel->save();
+
+                        $image->saveAs($dir . '/' . $imageModel->id . '.jpg');
+                    }
+                }
+            }
+
             return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
         }
+
+        return $this->render('update', [
+            'model' => $model,
+        ]);
     }
 
     /**
@@ -115,7 +167,13 @@ class ProductController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+
+        $dir = Yii::getAlias('@frontend/web/uploads/product/' . $model->id);
+
+        FileHelper::removeDirectory($dir);
+
+        $model->delete();
 
         return $this->redirect(['index']);
     }

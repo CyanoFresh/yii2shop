@@ -26,7 +26,6 @@ return [
             'datetimeFormat' => 'php:d-m-Y H:i:s',
             'timeFormat' => 'php:H:i:s',
             'currencyCode' => 'USD',
-//            'locale' => 'ru-RU',
         ],
     ],
     'modules' => [],

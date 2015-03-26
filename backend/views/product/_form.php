@@ -1,7 +1,9 @@
 <?php
 
 use common\models\Category;
+use common\models\Image;
 use common\models\Status;
+use kartik\widgets\FileInput;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
@@ -17,11 +19,48 @@ $categories = ArrayHelper::map($category_models, 'id', 'name');
 
 $status_models = Status::find()->all();
 $statuses = ArrayHelper::map($status_models, 'id', 'name');
+
+$image_models = Image::findAll(['model_id' => $model->id]);
+$images = [];
+
+foreach ($image_models as $image) {
+    $images[] = Html::img(Yii::$app->urlManagerFrontEnd->baseUrl . '/uploads/product/' . $model->id . '/' . $image->id . '.jpg', ['class'=>'file-preview-image']);
+}
 ?>
 
 <div class="product-form">
 
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
+
+    <?= $form->field($model, 'image')->widget(FileInput::className(), [
+        'options' => [
+            'accept' => 'image/*',
+        ],
+        'pluginOptions' => [
+            'showUpload' => false,
+            'browseLabel' => Yii::t('product', 'Browse'),
+            'removeLabel' => Yii::t('product', 'Delete'),
+            'removeClass' => 'btn btn-danger',
+            'initialPreview' => $model->isNewRecord ? false : [
+                Html::img(Yii::$app->urlManagerFrontEnd->baseUrl . '/uploads/product/' . $model->id . '/main.jpg', ['class'=>'file-preview-image'])
+            ],
+        ],
+    ]) ?>
+
+    <?= $form->field($model, 'images')->widget(FileInput::className(), [
+        'options' => [
+            'accept' => 'image/*',
+            'multiple' => true,
+        ],
+        'pluginOptions' => [
+            'maxFileCount' => 10,
+            'showUpload' => false,
+            'browseLabel' => Yii::t('product', 'Browse'),
+            'removeLabel' => Yii::t('product', 'Delete'),
+            'removeClass' => 'btn btn-danger',
+            'initialPreview' => $images,
+        ],
+    ]) ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => '255']) ?>
 

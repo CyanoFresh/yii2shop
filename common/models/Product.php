@@ -5,7 +5,6 @@ namespace common\models;
 use Yii;
 use yii\db\ActiveRecord;
 use Zelenin\yii\behaviors\Slug;
-use rico\yii2images\behaviors\ImageBehave;
 
 /**
  * This is the model class for table "{{%product}}".
@@ -28,6 +27,15 @@ use rico\yii2images\behaviors\ImageBehave;
 class Product extends ActiveRecord
 {
     /**
+     * @var \yii\web\UploadedFile file attribute
+     */
+    public $image;
+    /**
+     * @var \yii\web\UploadedFile files attribute
+     */
+    public $images;
+
+    /**
      * @inheritdoc
      */
     public static function tableName()
@@ -46,6 +54,10 @@ class Product extends ActiveRecord
             [['description'], 'string'],
             [['slug', 'name', 'meta_description', 'meta_keywords'], 'string', 'max' => 255],
             [['date'], 'safe'],
+            [['image'], 'safe'],
+            [['image'], 'image', 'mimeTypes' => 'image/jpeg, image/png', 'extensions'=>'jpg, png'],
+            [['image'], 'required', 'on' => 'create'],
+            [['images'], 'image', 'maxFiles' => 10],
         ];
     }
 
@@ -100,16 +112,16 @@ class Product extends ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getImage()
+    public function getImages()
     {
-        return $this->hasOne(ProductImage::className(), ['product_id' => 'id']);
+        return $this->hasMany(Image::className(), ['item_id' => 'id']);
     }
 
     /**
-     * @return \yii\db\ActiveQuery
+     * @return string
      */
-    public function getImages()
+    public function getMainImage()
     {
-        return $this->hasMany(ProductImage::className(), ['product_id' => 'id']);
+        return Yii::$app->urlManagerFrontEnd->baseUrl . '/uploads/product/' . $this->id . '/main.jpg';
     }
 }
