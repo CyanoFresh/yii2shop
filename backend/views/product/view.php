@@ -1,5 +1,6 @@
 <?php
 
+use common\models\Image;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
@@ -9,6 +10,13 @@ use yii\widgets\DetailView;
 $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('product', 'Products'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
+$image_models = Image::findAll(['model_id' => $model->id]);
+$images = null;
+
+foreach ($image_models as $image) {
+    $images .= Html::img(Yii::$app->urlManagerFrontEnd->baseUrl . '/uploads/product/' . $model->id . '/' . $image->id . '.jpg', ['width' => '200px']);
+}
 ?>
 <div class="product-view">
 
@@ -19,7 +27,6 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a(Yii::t('product', 'Delete'), ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => Yii::t('product', 'Are you sure you want to delete this item?'),
                 'method' => 'post',
             ],
         ]) ?>
@@ -29,6 +36,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
+            [
+                'attribute' => 'image',
+                'format' => 'raw',
+                'value' => Html::img($model->mainImage, [
+                    'width' => '200px'
+                ]),
+            ],
             'name',
             [
                 'attribute' => 'price',
@@ -47,6 +61,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'date',
             'slug',
             'description:html',
+            [
+                'attribute' => 'images',
+                'format' => 'raw',
+                'value' => $images,
+            ],
             'meta_description',
             'meta_keywords',
         ],

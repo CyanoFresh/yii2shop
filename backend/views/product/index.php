@@ -26,6 +26,15 @@ $this->params['breadcrumbs'][] = $this->title;
             // ['class' => 'yii\grid\SerialColumn'],
 
             // 'id',
+            [
+                'attribute' => 'image',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    return Html::img($model->mainImage, [
+                        'width' => '100px'
+                    ]);
+                },
+            ],
             'name',
             [
                 'attribute' => 'price',
