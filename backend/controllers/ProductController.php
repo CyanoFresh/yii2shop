@@ -75,18 +75,21 @@ class ProductController extends Controller
     public function actionCreate()
     {
         $model = new Product(['scenario' => 'create']);
-        $model->date = date('d-m-Y H:i:s');
+        $model->date = date('Y-m-d H:i');
 
         if ($model->load(Yii::$app->request->post())) {
             $model->image = UploadedFile::getInstance($model, 'image');
             $model->images = UploadedFile::getInstances($model, 'images');
 
-            if ($model->validate() && $model->save()) {
+            if ($model->validate() && $model->save() && $model->image) {
+                // Working directory
                 $dir = Yii::getAlias('@frontend/web/uploads/product/' . $model->id);
                 FileHelper::createDirectory($dir);
 
+                // Save main image
                 $model->image->saveAs($dir . '/main.jpg');
 
+                // Save images
                 if ($model->images) {
                     foreach ($model->images as $image) {
                         $imageModel = new Image();

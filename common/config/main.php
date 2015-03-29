@@ -13,19 +13,14 @@ return [
                 ],
             ],
         ],
+        'formatter' => [
+            'datetimeFormat' => 'php:Y-m-d H:i',
+            'timeFormat' => 'php:H:i',
+            'currencyCode' => 'USD',
+        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-        ],
-        'urlManagerFrontEnd' => [
-            'class' => 'yii\web\urlManager',
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-        ],
-        'formatter' => [
-            'datetimeFormat' => 'php:d-m-Y H:i:s',
-            'timeFormat' => 'php:H:i:s',
-            'currencyCode' => 'USD',
         ],
     ],
     'modules' => [],

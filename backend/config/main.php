@@ -30,6 +30,13 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'urlManager' => [
+            'baseUrl' => '//admin.yii2shop/',
+        ],
+        'urlManagerFrontEnd' => [
+            'class' => 'yii\web\urlManager',
+            'baseUrl' => '//yii2shop/',
+        ],
     ],
     'params' => $params,
 ];

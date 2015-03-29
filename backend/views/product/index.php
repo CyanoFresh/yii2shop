@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'image',
                 'format' => 'raw',
                 'value' => function ($model) {
-                    return Html::img($model->mainImage, [
+                    return Html::img($model->getMainImage('urlManagerFrontEnd'), [
                         'width' => '100px'
                     ]);
                 },

@@ -1,34 +1,16 @@
-html,
 body {
-    height: 100%;
+    padding-top: 80px;
 }
 
-.wrap {
-    min-height: 100%;
-    height: auto;
-    margin: 0 auto -60px;
-    padding: 0 0 60px;
+main {
+    min-height: 300px;
 }
 
-.wrap > .container {
-    padding: 70px 15px 20px;
-}
-
-.footer {
-    height: 60px;
-    background-color: #f5f5f5;
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
-}
-
-.jumbotron {
-    text-align: center;
-    background-color: transparent;
-}
-
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: normal;
+    margin: 0;
+    padding-bottom: 15px;
 }
 
 .not-set {
@@ -36,12 +18,79 @@ body {
     font-style: italic;
 }
 
+/* Product Panel */
+.panel-product {
+    display: block;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+}
+
+.panel-product:hover {
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12);
+}
+
+.panel-product > .panel-image {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    max-height: 240px;
+}
+
+.panel-product > .panel-image > img {
+    margin: 0 auto;
+}
+
+.promotion {
+    position: absolute;
+    z-index: 10;
+    bottom: 20px;
+    left: 0;
+    height: 24px;
+    width: auto;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    line-height: 18px;
+}
+
+.status {
+    display: inline-block;
+    font-family: Oswald, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: lighter;
+    height: 100%;
+    padding: 3px 10px;
+}
+
+.product-images {
+    margin: 5px 0;
+    width: 100%;
+}
+
+.product-images > img {
+    max-width: 100px;
+    cursor: pointer;
+    margin: 0 5px 5px 0;
+    display: inline-block;
+}
+
+.product-images > img.active {
+    box-shadow: 0 6px 10px rgba(0,0,0,.23), 0 10px 30px rgba(0,0,0,.19);
+}
+
 /* add sorting icons to gridview sort links */
 a.asc:after, a.desc:after {
     position: relative;
     top: 1px;
     display: inline-block;
-    font-family: 'Glyphicons Halflings';
+    font-family: 'Glyphicons Halflings', serif;
     font-style: normal;
     font-weight: normal;
     line-height: 1;
@@ -49,11 +98,11 @@ a.asc:after, a.desc:after {
 }
 
 a.asc:after {
-    content: /*"\e113"*/ "\e151";
+    content: "\e113";
 }
 
 a.desc:after {
-    content: /*"\e114"*/ "\e152";
+    content: "\e114";
 }
 
 .sort-numerical a.asc:after {

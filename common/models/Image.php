@@ -31,15 +31,4 @@ class Image extends ActiveRecord
             [['model_id'], 'integer']
         ];
     }
-
-    /**
-     * @inheritdoc
-     */
-    public function attributeLabels()
-    {
-        return [
-            'id' => Yii::t('image', 'ID'),
-            'model_id' => Yii::t('image', 'Product ID'),
-        ];
-    }
 }

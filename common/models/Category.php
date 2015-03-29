@@ -68,7 +68,7 @@ class Category extends ActiveRecord
         return [
             'slug' => [
                 'class' => Slug::className(),
-                'attribute' => ['id', 'name'],
+                'attribute' => ['name'],
             ],
         ];
     }

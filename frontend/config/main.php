@@ -8,6 +8,7 @@ $params = array_merge(
 
 return [
     'id' => 'app-frontend',
+    'name' => 'Yii2shop',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
@@ -27,6 +28,24 @@ return [
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
+        ],
+        'urlManager' => [
+            'baseUrl' => '//yii2shop/',
+            'enableStrictParsing' => true,
+            'rules' => [
+                // Home
+                '/' => 'site/index',
+                // Autorouting
+                '<controller:\w+>' => '<controller>/index',
+                // Catalog
+                'catalog' => 'catalog/index',
+                '<category:.+>/<slug>' => 'catalog/view',
+                '<category:.+>' => 'catalog/category',
+            ],
+        ],
+        'urlManagerBackEnd' => [
+            'class' => 'yii\web\urlManager',
+            'baseUrl' => '//admin.yii2shop/',
         ],
     ],
     'params' => $params,

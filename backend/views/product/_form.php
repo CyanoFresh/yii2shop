@@ -42,12 +42,12 @@ foreach ($image_models as $image) {
             'removeLabel' => Yii::t('product', 'Delete'),
             'removeClass' => 'btn btn-danger',
             'initialPreview' => $model->isNewRecord ? false : [
-                Html::img(Yii::$app->urlManagerFrontEnd->baseUrl . '/uploads/product/' . $model->id . '/main.jpg', ['class'=>'file-preview-image'])
+                Html::img($model->getMainImage('urlManagerFrontEnd'), ['class'=>'file-preview-image'])
             ],
         ],
     ]) ?>
 
-    <?= $form->field($model, 'images')->widget(FileInput::className(), [
+    <?= $form->field($model, 'images[]')->widget(FileInput::className(), [
         'options' => [
             'accept' => 'image/*',
             'multiple' => true,

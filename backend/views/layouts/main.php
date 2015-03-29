@@ -19,7 +19,7 @@ AppAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) . ' - ' . Yii::$app->name ?></title>
+    <title><?= Html::encode($this->title) ?> - <?= Yii::$app->name ?></title>
     <?php $this->head() ?>
 </head>
 <body>
@@ -47,7 +47,9 @@ AppAsset::register($this);
             $menuItems[] = ['label' => Yii::t('backend', 'Login'), 'url' => ['/site/login']];
         } else {
             $menuItems[] = [
-                'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+                'label' => Yii::t('backend', 'Logout ({username})', [
+                    'username' => Yii::$app->user->identity->username
+                ]),
                 'url' => ['/site/logout'],
                 'linkOptions' => ['data-method' => 'post']
             ];

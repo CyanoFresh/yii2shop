@@ -88,7 +88,7 @@ class Product extends ActiveRecord
         return [
             'slug' => [
                 'class' => Slug::className(),
-                'attribute' => ['id', 'name'],
+                'attribute' => ['name'],
             ],
         ];
     }
@@ -118,10 +118,11 @@ class Product extends ActiveRecord
     }
 
     /**
+     * @param string $urlManager
      * @return string
      */
-    public function getMainImage()
+    public function getMainImage($urlManager = 'urlManager')
     {
-        return Yii::$app->urlManagerFrontEnd->baseUrl . '/uploads/product/' . $this->id . '/main.jpg';
+        return Yii::$app->{$urlManager}->baseUrl . '/uploads/product/' . $this->id . '/main.jpg';
     }
 }

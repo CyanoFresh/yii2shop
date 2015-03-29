@@ -15,7 +15,10 @@ $image_models = Image::findAll(['model_id' => $model->id]);
 $images = null;
 
 foreach ($image_models as $image) {
-    $images .= Html::img(Yii::$app->urlManagerFrontEnd->baseUrl . '/uploads/product/' . $model->id . '/' . $image->id . '.jpg', ['width' => '200px']);
+    $images .= Html::img(Yii::$app->urlManagerFrontEnd->baseUrl . '/uploads/product/' . $model->id . '/' . $image->id . '.jpg', [
+        'width' => '200px',
+        'class' => 'img-thumbnail',
+    ]);
 }
 ?>
 <div class="product-view">
@@ -39,8 +42,9 @@ foreach ($image_models as $image) {
             [
                 'attribute' => 'image',
                 'format' => 'raw',
-                'value' => Html::img($model->mainImage, [
-                    'width' => '200px'
+                'value' => Html::img($model->getMainImage('urlManagerFrontEnd'), [
+                    'class' => 'img-thumbnail',
+                    'width' => '200px',
                 ]),
             ],
             'name',
