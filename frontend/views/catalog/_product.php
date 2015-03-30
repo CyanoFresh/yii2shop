@@ -4,7 +4,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Product */
 ?>
-<div class="col-sm-3">
+<div class="col-sm-4 col-lg-4 col-md-4 col-xs-6">
     <div class="panel panel-default panel-product">
         <div class="panel-image">
             <?= Html::img($model->mainImage, [

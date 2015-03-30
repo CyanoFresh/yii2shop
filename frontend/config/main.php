@@ -31,12 +31,14 @@ return [
         ],
         'urlManager' => [
             'baseUrl' => '//yii2shop/',
-            'enableStrictParsing' => true,
             'rules' => [
                 // Home
                 '/' => 'site/index',
-                // Autorouting
-                '<controller:\w+>' => '<controller>/index',
+                // Cart
+                'cart' => 'cart/index',
+                'cart/add/<id:\d+>' => 'cart/add',
+                'cart/remove/<id:\d+>' => 'cart/remove',
+                'cart/clear' => 'cart/clear',
                 // Catalog
                 'catalog' => 'catalog/index',
                 '<category:.+>/<slug>' => 'catalog/view',

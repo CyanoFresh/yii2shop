@@ -22,6 +22,10 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
         ],
+        'cart' => [
+            'class' => 'yz\shoppingcart\ShoppingCart',
+            'cartId' => 'my_application_cart',
+        ],
     ],
     'modules' => [],
 ];

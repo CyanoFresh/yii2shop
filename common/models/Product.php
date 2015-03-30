@@ -4,6 +4,8 @@ namespace common\models;
 
 use Yii;
 use yii\db\ActiveRecord;
+use yz\shoppingcart\CartPositionInterface;
+use yz\shoppingcart\CartPositionTrait;
 use Zelenin\yii\behaviors\Slug;
 
 /**
@@ -22,10 +24,11 @@ use Zelenin\yii\behaviors\Slug;
  *
  * @property Category $category
  * @property Status $status
- * @property ProductImage[] $productImages
  */
-class Product extends ActiveRecord
+class Product extends ActiveRecord implements CartPositionInterface
 {
+    use CartPositionTrait;
+
     /**
      * @var \yii\web\UploadedFile file attribute
      */
@@ -124,5 +127,15 @@ class Product extends ActiveRecord
     public function getMainImage($urlManager = 'urlManager')
     {
         return Yii::$app->{$urlManager}->baseUrl . '/uploads/product/' . $this->id . '/main.jpg';
+    }
+
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 }
