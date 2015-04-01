@@ -62,7 +62,7 @@ foreach ($image_models as $image) {
                 'format' => 'raw',
                 'value' => Html::a($model->status->name, ['status/view', 'id' => $model->status->id]),
             ],
-            'date',
+            'date:datetime',
             'slug',
             'description:html',
             [

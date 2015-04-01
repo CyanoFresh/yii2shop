@@ -36,6 +36,7 @@ return [
                 '/' => 'site/index',
                 // Cart
                 'cart' => 'cart/index',
+                'cart/order' => 'cart/order',
                 'cart/add/<id:\d+>' => 'cart/add',
                 'cart/remove/<id:\d+>' => 'cart/remove',
                 'cart/clear' => 'cart/clear',

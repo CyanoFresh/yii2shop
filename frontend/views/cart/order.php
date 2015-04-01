@@ -1,15 +1,17 @@
 <?php
+use kartik\widgets\ActiveForm;
 use yii\grid\GridView;
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
+/* @var $model common\models\Order */
 /* @var $dataProvider yii\data\ArrayDataProvider */
 
-$this->title = Yii::t('cart', 'Cart');
+$this->title = Yii::t('cart', 'Order');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('cart', 'Cart'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <h1 class="page-header"><?= Html::encode($this->title) ?></h1>
-
 <div class="row">
     <div class="col-sm-9">
         <?= GridView::widget([
@@ -36,38 +38,11 @@ $this->params['breadcrumbs'][] = $this->title;
                     },
                 ],
                 'price:currency',
-                [
-                    'class' => yii\grid\ActionColumn::className(),
-                    'template' => '{remove}',
-                    'buttons' => [
-                        'remove' => function ($url, $model) {
-                            return Html::a('<span class="glyphicon glyphicon-trash"></span>', ['remove', 'id' => $model->id], [
-                                'class' => 'btn btn-danger btn-sm',
-                            ]);
-                        }
-                    ],
-                    'contentOptions' => [
-                        'style' => 'width: 10%',
-                    ],
-                ]
             ],
         ]) ?>
-
-        <div class="well">
-            <?= Html::a('<span class="glyphicon glyphicon-arrow-left"></span> ' . Yii::t('cart', 'Continue shopping'), ['catalog/index'], [
-                'class' => 'btn btn-default',
-            ]) ?>
-            <?= Html::a(Yii::t('cart', 'Clear Cart'), ['cart/clear'], [
-                'class' => 'btn btn-danger pull-right ' . ((Yii::$app->cart->getCount() <= 0) ? 'disabled' : false),
-            ]) ?>
-        </div>
     </div>
 
     <div class="col-sm-3">
-        <?= Html::a(Yii::t('cart', 'Order'), ['cart/order'], [
-            'class' => 'btn btn-primary btn-block ' . ((Yii::$app->cart->getCount() <= 0) ? 'disabled' : false),
-            'style' => 'margin-bottom: 10px;',
-        ]) ?>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <?= Yii::t('cart', 'Summary') ?>
@@ -80,3 +55,17 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
+
+<?php $form = ActiveForm::begin() ?>
+
+<?= $form->field($model, 'name')->textInput(['maxlength' => '255']) ?>
+<?= $form->field($model, 'email')->input('email') ?>
+<?= $form->field($model, 'phone')->textInput(['maxlength' => '255']) ?>
+<?= $form->field($model, 'message')->textarea(['rows' => 6]) ?>
+
+<div class="form-group">
+    <?= Html::submitButton(Yii::t('cart', 'Order'), ['class' => 'btn btn-default']) ?>
+    <?= Html::resetButton(Yii::t('cart', 'Reset'), ['class' => 'btn btn-danger']) ?>
+</div>
+
+<?php ActiveForm::end() ?>

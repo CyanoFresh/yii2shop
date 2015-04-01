@@ -17,8 +17,8 @@ class ProductSearch extends Product
     public function rules()
     {
         return [
-            [['id', 'category_id', 'status_id', 'price'], 'integer'],
-            [['date', 'slug', 'name', 'description', 'meta_description', 'meta_keywords'], 'safe'],
+            [['id', 'price'], 'integer'],
+            [['date', 'slug', 'name', 'category_id', 'status_id', 'description', 'meta_description', 'meta_keywords'], 'safe'],
         ];
     }
 
@@ -42,6 +42,8 @@ class ProductSearch extends Product
     {
         $query = Product::find();
 
+        $query->joinWith(['category', 'status']);
+
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
@@ -54,10 +56,12 @@ class ProductSearch extends Product
             return $dataProvider;
         }
 
+        //$query->joinWith('category');
+
         $query->andFilterWhere([
             'id' => $this->id,
-            'category_id' => $this->category_id,
-            'status_id' => $this->status_id,
+            //'category_id' => $this->category_id,
+            //'status_id' => $this->status_id,
             'price' => $this->price,
             'date' => $this->date,
         ]);
@@ -66,7 +70,9 @@ class ProductSearch extends Product
             ->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'description', $this->description])
             ->andFilterWhere(['like', 'meta_description', $this->meta_description])
-            ->andFilterWhere(['like', 'meta_keywords', $this->meta_keywords]);
+            ->andFilterWhere(['like', 'meta_keywords', $this->meta_keywords])
+            ->andFilterWhere(['like', 'category.name', $this->category->name])
+            ->andFilterWhere(['like', 'status.name', $this->status->name]);
 
         return $dataProvider;
     }

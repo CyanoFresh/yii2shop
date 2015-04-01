@@ -10,7 +10,7 @@ use raoul2000\bootswatch\BootswatchAsset;
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-BootswatchAsset::$theme = 'Sandstone';
+BootswatchAsset::$theme = 'United';
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -32,17 +32,21 @@ AppAsset::register($this);
                 'brandLabel' => Yii::$app->name,
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
+                    'class' => 'navbar-default navbar-fixed-top',
                 ],
             ]);
             $menuItems = [
                 ['label' => Yii::t('frontend', 'Home'), 'url' => ['/site/index']],
                 ['label' => Yii::t('frontend', 'Catalog'), 'url' => ['/catalog/index']],
-                ['label' => Yii::t('frontend', 'Cart'), 'url' => ['/cart/index']],
+                [
+                    'label' => Yii::t('frontend', 'Cart') . '&nbsp' . Html::tag('span', Yii::$app->cart->getCount(), ['class' => 'badge']),
+                    'url' => ['/cart/index'],
+                ],
             ];
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => $menuItems,
+                'encodeLabels' => false,
             ]);
             NavBar::end();
         ?>

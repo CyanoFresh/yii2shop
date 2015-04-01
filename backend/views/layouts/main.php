@@ -9,7 +9,7 @@ use raoul2000\bootswatch\BootswatchAsset;
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-BootswatchAsset::$theme = 'Sandstone';
+//BootswatchAsset::$theme = 'Sandstone';
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -40,7 +40,7 @@ AppAsset::register($this);
             ['label' => Yii::t('backend', 'Products'), 'url' => ['/product/index']],
             ['label' => Yii::t('backend', 'Categories'), 'url' => ['/category/index']],
             ['label' => Yii::t('backend', 'Statuses'), 'url' => ['/status/index']],
-            ['label' => Yii::t('backend', 'Orders'), 'url' => ['/orders/index']],
+            ['label' => Yii::t('backend', 'Orders'), 'url' => ['/order/index']],
             ['label' => Yii::t('backend', 'Site'), 'url' => Yii::$app->urlManagerFrontEnd->baseUrl, 'options'=>['target' => '_blank'], 'linkOptions' => ['target' => '_blank']],
         ];
         if (Yii::$app->user->isGuest) {

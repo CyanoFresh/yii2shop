@@ -1,10 +1,12 @@
 <?php
 
+use yii\grid\GridView;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Order */
+/* @var $dataProvider yii\data\ArrayDataProvider */
 
 $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('order', 'Orders'), 'url' => ['index']];
@@ -30,13 +32,42 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'status',
-            'total_cost',
-            'date',
-            'data:ntext',
+            'total_cost:currency',
+            'date:datetime',
+            // 'data:ntext',
             'name',
             'email:email',
             'phone',
             'message:ntext',
+        ],
+    ]) ?>
+
+    <h2><?= Yii::t('product', 'Products') ?></h2>
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'layout' => '{items}',
+        'columns' => [
+            [
+                'attribute' => 'image',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    return Html::img($model->getMainImage('urlManagerFrontEnd'), [
+                        'width' => 80,
+                    ]);
+                },
+                'contentOptions' => [
+                    'style' => 'width: 15%',
+                ],
+            ],
+            [
+                'attribute' => 'name',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    return Html::a($model->name, ['product/view', 'id' => $model->id]);
+                },
+            ],
+            'price:currency',
         ],
     ]) ?>
 

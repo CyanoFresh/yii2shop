@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use common\models\Product;
+use common\models\Order;
 use Yii;
 use yii\data\ArrayDataProvider;
 use yii\web\Controller;
@@ -44,6 +45,40 @@ class CartController extends Controller
         Yii::$app->cart->removeAll();
 
         return $this->redirect(['index']);
+    }
+
+    public function actionOrder()
+    {
+        $cartPositions = Yii::$app->cart->getPositions();
+
+        if (!$cartPositions or $cartPositions === null) {
+            return $this->redirect(['index']);
+        }
+
+        $dataProvider = new ArrayDataProvider([
+            'allModels' => $cartPositions,
+        ]);
+
+        $model = new Order();
+
+        if ($model->load(Yii::$app->request->post())) {
+            $model->status = 1;
+            $model->total_cost = Yii::$app->cart->getCost();
+            $model->date = Yii::$app->formatter->asDatetime(time());
+            $model->data = Yii::$app->cart->getSerialized();
+
+            if ($model->validate() && $model->save()) {
+                Yii::$app->cart->removeAll();
+                return $this->render('orderSuccess', [
+                    'model' => $model,
+                ]);
+            }
+        }
+
+        return $this->render('order', [
+            'model' => $model,
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
     /**
