@@ -5,7 +5,6 @@ namespace common\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Order;
 
 /**
  * OrderSearch represents the model behind the search form about `common\models\Order`.
@@ -41,7 +40,7 @@ class OrderSearch extends Order
      */
     public function search($params)
     {
-        $query = Order::find();
+        $query = Order::find()->orderBy('status');
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,

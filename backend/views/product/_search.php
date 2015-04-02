@@ -34,13 +34,16 @@ $statuses = ArrayHelper::map($status_models, 'id', 'name');
                 ]); ?>
 
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
+                        <?= $form->field($model, 'id') ?>
+                    </div>
+                    <div class="col-sm-3">
                         <?= $form->field($model, 'name') ?>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         <?= $form->field($model, 'price') ?>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         <?= $form->field($model, 'slug') ?>
                     </div>
                     <div class="col-sm-6">

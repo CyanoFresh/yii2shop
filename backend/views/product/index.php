@@ -12,24 +12,24 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="product-index">
 
-    <h1 class="page-header"><?= Html::encode($this->title) ?></h1>
-    <?= $this->render('_search', ['model' => $searchModel]); ?>
+    <h1 class="page-header">
+        <?= Html::encode($this->title) ?>
+        <?= Html::a('<span class="glyphicon glyphicon-plus"></span>', ['create'], ['class' => 'btn btn-success pull-right']) ?>
+    </h1>
 
-    <p>
-        <?= Html::a(Yii::t('product', 'Create Product'), ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    <?= $this->render('_search', [
+        'model' => $searchModel
+    ]) ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        //'filterModel' => $searchModel,
+        'summaryOptions' => ['class' => 'alert alert-info'],
         'columns' => [
-            // ['class' => 'yii\grid\SerialColumn'],
-
-            // 'id',
             [
                 'attribute' => 'image',
                 'format' => 'raw',
                 'value' => function ($model) {
+                    /** @var $model common\models\Product */
                     return Html::img($model->getMainImage('urlManagerFrontEnd'), [
                         'width' => '80px'
                     ]);
@@ -39,12 +39,14 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'price',
                 'value' => function ($model) {
+                    /** @var $model common\models\Product */
                     return Yii::$app->formatter->asCurrency($model->price);
                 },
             ],
             [
                 'attribute' => 'category_id',
                 'value' => function ($model) {
+                    /** @var $model common\models\Product */
                     return Html::a($model->category->name, ['category/view', 'id' => $model->category->id]);
                 },
                 'format' => 'raw',
@@ -52,17 +54,13 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'status_id',
                 'value' => function ($model) {
+                    /** @var $model common\models\Product */
                     return Html::a($model->status->name, ['status/view', 'id' => $model->status->id]);
                 },
                 'format' => 'raw',
             ],
-            // 'date',
-            // 'slug',
-            // 'description:ntext',
-            // 'meta_description',
-            // 'meta_keywords',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'backend\components\ActionButtonColumn'],
         ],
     ]); ?>
 

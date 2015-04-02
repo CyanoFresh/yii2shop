@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use kartik\widgets\ActiveForm;
 use kartik\widgets\ColorInput;
 
 /* @var $this yii\web\View */

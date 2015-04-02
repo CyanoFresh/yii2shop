@@ -20,6 +20,9 @@ use yii\db\ActiveRecord;
  */
 class Order extends ActiveRecord
 {
+    const STATUS_NEW = 1;
+    const STATUS_REVIEWED = 2;
+    const STATUS_PROCESSED = 3;
     /**
      * @inheritdoc
      */
@@ -58,5 +61,19 @@ class Order extends ActiveRecord
             'phone' => Yii::t('order', 'Phone'),
             'message' => Yii::t('order', 'Message'),
         ];
+    }
+
+    public function getStatuses()
+    {
+        return [
+            self::STATUS_NEW => Yii::t('order', 'New'),
+            self::STATUS_REVIEWED => Yii::t('order', 'Reviewed'),
+            self::STATUS_PROCESSED => Yii::t('order', 'Processed'),
+        ];
+    }
+
+    public function getStatusLabel($status)
+    {
+        return $this->statuses[$status];
     }
 }

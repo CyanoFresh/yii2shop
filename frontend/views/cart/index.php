@@ -57,15 +57,15 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= Html::a('<span class="glyphicon glyphicon-arrow-left"></span> ' . Yii::t('cart', 'Continue shopping'), ['catalog/index'], [
                 'class' => 'btn btn-default',
             ]) ?>
-            <?= Html::a(Yii::t('cart', 'Clear Cart'), ['cart/clear'], [
+            <?= Html::a('<span class="glyphicon glyphicon-trash"></span> ' . Yii::t('cart', 'Clear Cart'), ['cart/clear'], [
                 'class' => 'btn btn-danger pull-right ' . ((Yii::$app->cart->getCount() <= 0) ? 'disabled' : false),
             ]) ?>
         </div>
     </div>
 
     <div class="col-sm-3">
-        <?= Html::a(Yii::t('cart', 'Order'), ['cart/order'], [
-            'class' => 'btn btn-primary btn-block ' . ((Yii::$app->cart->getCount() <= 0) ? 'disabled' : false),
+        <?= Html::a('<span class="glyphicon glyphicon-ok"></span> ' . Yii::t('cart', 'Order'), ['cart/order'], [
+            'class' => 'btn btn-success btn-block ' . ((Yii::$app->cart->getCount() <= 0) ? 'disabled' : false),
             'style' => 'margin-bottom: 10px;',
         ]) ?>
         <div class="panel panel-default">

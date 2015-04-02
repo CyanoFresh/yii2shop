@@ -42,8 +42,6 @@ class ProductSearch extends Product
     {
         $query = Product::find();
 
-        $query->joinWith(['category', 'status']);
-
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
@@ -60,8 +58,8 @@ class ProductSearch extends Product
 
         $query->andFilterWhere([
             'id' => $this->id,
-            //'category_id' => $this->category_id,
-            //'status_id' => $this->status_id,
+            'category_id' => $this->category_id,
+            'status_id' => $this->status_id,
             'price' => $this->price,
             'date' => $this->date,
         ]);
@@ -70,9 +68,7 @@ class ProductSearch extends Product
             ->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'description', $this->description])
             ->andFilterWhere(['like', 'meta_description', $this->meta_description])
-            ->andFilterWhere(['like', 'meta_keywords', $this->meta_keywords])
-            ->andFilterWhere(['like', 'category.name', $this->category->name])
-            ->andFilterWhere(['like', 'status.name', $this->status->name]);
+            ->andFilterWhere(['like', 'meta_keywords', $this->meta_keywords]);
 
         return $dataProvider;
     }

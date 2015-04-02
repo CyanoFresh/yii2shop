@@ -12,25 +12,40 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="order-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1 class="page-header"><?= Html::encode($this->title) ?></h1>
+
     <?= $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+        'summaryOptions' => ['class' => 'alert alert-info'],
+        'rowOptions' => function ($model) {
+            if ($model->status === 1) {
+                return ['class' => 'success'];
+            } elseif ($model->status === 2) {
+                return ['class' => 'info'];
+            }
+
+            return ['class' => 'active'];
+        },
         'columns' => [
             'id',
-            'status',
+            'name',
             'total_cost:currency',
             'date:datetime',
-            'name',
-            // 'data:ntext',
+            [
+                'attribute' => 'status',
+                'value' => function ($model) {
+                    /** @var $model common\models\Order */
+                    return $model->getStatusLabel($model->status);
+                }
+            ],
             // 'email:email',
             // 'phone',
             // 'message:ntext',
 
             [
-                'class' => 'yii\grid\ActionColumn',
+                'class' => 'backend\components\ActionButtonColumn',
                 'template' => '{view} {delete}',
             ],
         ],

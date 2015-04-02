@@ -4,13 +4,12 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
-use frontend\widgets\Alert;
 use raoul2000\bootswatch\BootswatchAsset;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-BootswatchAsset::$theme = 'United';
+BootswatchAsset::$theme = 'Flatly';
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -32,7 +31,7 @@ AppAsset::register($this);
                 'brandLabel' => Yii::$app->name,
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
-                    'class' => 'navbar-default navbar-fixed-top',
+                    'class' => 'navbar-inverse navbar-fixed-top',
                 ],
             ]);
             $menuItems = [

@@ -17,7 +17,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('order', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a(Yii::t('order', 'Set as New'), ['new', 'id' => $model->id], [
+            'class' => 'btn btn-default'
+        ]) ?>
+        <?= Html::a(Yii::t('order', 'Set as Done'), ['done', 'id' => $model->id], [
+            'class' => 'btn btn-success'
+        ]) ?>
         <?= Html::a(Yii::t('order', 'Delete'), ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
@@ -31,7 +36,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'status',
+            [
+                'attribute' => 'status',
+                'value' => $model->getStatusLabel($model->status),
+            ],
             'total_cost:currency',
             'date:datetime',
             // 'data:ntext',
@@ -52,6 +60,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'image',
                 'format' => 'raw',
                 'value' => function ($model) {
+                    /** @var $model common\models\Product */
                     return Html::img($model->getMainImage('urlManagerFrontEnd'), [
                         'width' => 80,
                     ]);

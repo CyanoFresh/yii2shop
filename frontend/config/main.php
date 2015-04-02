@@ -41,6 +41,7 @@ return [
                 'cart/remove/<id:\d+>' => 'cart/remove',
                 'cart/clear' => 'cart/clear',
                 // Catalog
+                'catalog/page/<page:\d+>' => 'catalog/index',
                 'catalog' => 'catalog/index',
                 '<category:.+>/<slug>' => 'catalog/view',
                 '<category:.+>' => 'catalog/category',

@@ -4,9 +4,9 @@ use common\models\Category;
 use common\models\Image;
 use common\models\Status;
 use kartik\widgets\FileInput;
+use kartik\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
 use vova07\imperavi\Widget as Imperavi;
 use kartik\widgets\DateTimePicker;
 
@@ -64,7 +64,13 @@ foreach ($image_models as $image) {
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => '255']) ?>
 
-    <?= $form->field($model, 'price')->textInput() ?>
+    <?= $form->field($model, 'price', [
+        'addon' => [
+            'prepend' => [
+                'content' => Yii::$app->formatter->currencyCode,
+            ],
+        ],
+    ])->textInput() ?>
 
     <?= $form->field($model, 'description')->widget(Imperavi::className(), [
         'settings' => [

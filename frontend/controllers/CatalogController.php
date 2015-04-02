@@ -16,7 +16,8 @@ class CatalogController extends Controller
         $dataProvider = new ActiveDataProvider([
             'query' => Product::find(),
             'pagination' => [
-                'pageSize' => 20,
+                'forcePageParam' => false,
+                'pageSizeParam' => false,
             ],
         ]);
 
@@ -41,7 +42,8 @@ class CatalogController extends Controller
         $dataProvider = new ActiveDataProvider([
             'query' => $model->getProducts(),
             'pagination' => [
-                'pageSize' => 20,
+                'forcePageParam' => false,
+                'pageSizeParam' => false,
             ],
         ]);
 

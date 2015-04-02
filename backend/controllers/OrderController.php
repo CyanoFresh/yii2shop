@@ -9,6 +9,7 @@ use yii\data\ArrayDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * OrderController implements the CRUD actions for Order model.
@@ -18,6 +19,16 @@ class OrderController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['index', 'view', 'new', 'done', 'delete'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -51,11 +62,17 @@ class OrderController extends Controller
     {
         $model = $this->findModel($id);
 
+        // Unserialize products in the cart
         $data = unserialize($model->data);
-
         $dataProvider = new ArrayDataProvider([
             'allModels' => $data,
         ]);
+
+        // Change status
+        if ($model->status === 1) {
+            $model->status = 2;
+            $model->save();
+        }
 
         return $this->render('view', [
             'model' => $model,
@@ -72,6 +89,36 @@ class OrderController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
+
+        return $this->redirect(['index']);
+    }
+
+    /**
+     * Sets status to 1
+     * If action is successful, the browser will be redirected to the 'index' page.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionNew($id)
+    {
+        $model = $this->findModel($id);
+        $model->status = 1;
+        $model->save();
+
+        return $this->redirect(['index']);
+    }
+
+    /**
+     * Sets status to 3
+     * If action is successful, the browser will be redirected to the 'index' page.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionDone($id)
+    {
+        $model = $this->findModel($id);
+        $model->status = 3;
+        $model->save();
 
         return $this->redirect(['index']);
     }

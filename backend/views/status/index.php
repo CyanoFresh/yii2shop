@@ -12,25 +12,24 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="status-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <h1 class="page-header">
+        <?= Html::encode($this->title) ?>
+        <?= Html::a('<span class="glyphicon glyphicon-plus"></span>', ['create'], ['class' => 'btn btn-success pull-right']) ?>
+    </h1>
 
-    <p>
-        <?= Html::a(Yii::t('status', 'Create Status'), ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    <?= $this->render('_search', [
+        'model' => $searchModel
+    ]) ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+        // 'filterModel' => $searchModel,
+        'summaryOptions' => ['class' => 'alert alert-info'],
         'columns' => [
-            // ['class' => 'yii\grid\SerialColumn'],
-
-            // 'id',
             'name',
             'color',
             'background',
-
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'backend\components\ActionButtonColumn'],
         ],
     ]); ?>
 

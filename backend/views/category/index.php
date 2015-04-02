@@ -12,28 +12,25 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="category-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <h1 class="page-header">
+        <?= Html::encode($this->title) ?>
+        <?= Html::a('<span class="glyphicon glyphicon-plus"></span>', ['create'], ['class' => 'btn btn-success pull-right']) ?>
+    </h1>
 
-    <p>
-        <?= Html::a(Yii::t('category', 'Create Category'), ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    <?= $this->render('_search', [
+        'model' => $searchModel
+    ]) ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+        // 'filterModel' => $searchModel,
+        'summaryOptions' => ['class' => 'alert alert-info'],
         'columns' => [
-            // ['class' => 'yii\grid\SerialColumn'],
-
             'id',
             'name',
             'parent_id',
             'slug',
-            // 'description:html',
-            // 'meta_description',
-            // 'meta_keywords',
-
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'backend\components\ActionButtonColumn'],
         ],
     ]); ?>
 
