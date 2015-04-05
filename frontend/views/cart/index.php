@@ -35,6 +35,13 @@ $this->params['breadcrumbs'][] = $this->title;
                         return Html::a($model->name, ['catalog/view', 'slug' => $model->slug, 'category' => $model->category->slug]);
                     },
                 ],
+                [
+                    'attribute' => 'category_id',
+                    'format' => 'raw',
+                    'value' => function ($model) {
+                        return Html::a($model->category->name, ['catalog/category', 'category' => $model->category->slug]);
+                    },
+                ],
                 'price:currency',
                 [
                     'class' => yii\grid\ActionColumn::className(),

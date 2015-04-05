@@ -10,6 +10,7 @@ return [
                 '*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'sourceLanguage' => 'en',
+                    'basePath' => '@common/messages',
                 ],
             ],
         ],

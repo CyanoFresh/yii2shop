@@ -24,7 +24,10 @@ $image_models = Image::findAll(['model_id' => $model->id]);
 $images = [];
 
 foreach ($image_models as $image) {
-    $images[] = Html::img(Yii::$app->urlManagerFrontEnd->baseUrl . '/uploads/product/' . $model->id . '/' . $image->id . '.jpg', ['class'=>'file-preview-image']);
+    $images[] = Html::img(
+        Yii::$app->urlManagerFrontEnd->baseUrl . '/uploads/product/' . $model->id . '/' . $image->id . '.jpg',
+        ['class' => 'file-preview-image']
+    );
 }
 ?>
 
@@ -42,7 +45,7 @@ foreach ($image_models as $image) {
             'removeLabel' => Yii::t('product', 'Delete'),
             'removeClass' => 'btn btn-danger',
             'initialPreview' => $model->isNewRecord ? false : [
-                Html::img($model->getMainImage('urlManagerFrontEnd'), ['class'=>'file-preview-image'])
+                Html::img($model->getMainImage('urlManagerFrontEnd'), ['class' => 'file-preview-image'])
             ],
         ],
     ]) ?>

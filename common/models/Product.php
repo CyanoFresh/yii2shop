@@ -74,6 +74,8 @@ class Product extends ActiveRecord implements CartPositionInterface
             'category_id' => Yii::t('product', 'Category'),
             'status_id' => Yii::t('product', 'Status'),
             'price' => Yii::t('product', 'Price'),
+            'image' => Yii::t('product', 'Image'),
+            'images' => Yii::t('product', 'Images'),
             'date' => Yii::t('product', 'Date'),
             'slug' => Yii::t('product', 'Slug'),
             'name' => Yii::t('product', 'Name'),

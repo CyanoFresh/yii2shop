@@ -7,11 +7,12 @@ use yii\widgets\ActiveForm;
 /* @var $model common\models\StatusSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
+
 <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <?= Yii::t('product', 'Search Statuses') ?>
+                <?= Yii::t('status', 'Search Statuses') ?>
             </a>
         </h4>
     </div>

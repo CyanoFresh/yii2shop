@@ -47,10 +47,14 @@ $statuses = ArrayHelper::map($status_models, 'id', 'name');
                         <?= $form->field($model, 'slug') ?>
                     </div>
                     <div class="col-sm-6">
-                        <?= $form->field($model, 'category_id')->dropDownList($categories) ?>
+                        <?= $form->field($model, 'category_id')->dropDownList($categories, [
+                            'prompt' => Yii::t('product', '- select category -'),
+                        ]) ?>
                     </div>
                     <div class="col-sm-6">
-                        <?= $form->field($model, 'status_id')->dropDownList($statuses) ?>
+                        <?= $form->field($model, 'status_id')->dropDownList($statuses, [
+                            'prompt' => Yii::t('product', '- select status -'),
+                        ]) ?>
                     </div>
                 </div>
 

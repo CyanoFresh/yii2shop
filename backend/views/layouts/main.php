@@ -35,12 +35,13 @@ $newOrders = Order::find()->where(['status' => Order::STATUS_NEW])->count();
             ],
         ]);
         $menuItemsLeft = [
-            ['label' => Yii::t('backend', 'Home'), 'url' => ['/site/index']],
+            //['label' => Yii::t('backend', 'Home'), 'url' => ['/site/index']],
             //['label' => Yii::t('backend', 'Shop'), 'items' => [
                 ['label' => Yii::t('backend', 'Products'), 'url' => ['/product/index']],
                 ['label' => Yii::t('backend', 'Categories'), 'url' => ['/category/index']],
                 ['label' => Yii::t('backend', 'Statuses'), 'url' => ['/status/index']],
             //]],
+            ['label' => Yii::t('backend', 'Slides'), 'url' => ['/slide/index']],
             [
                 'label' => Yii::t('backend', 'Orders') . ' ' . Html::tag('span', $newOrders, ['class' => 'badge']),
                 'url' => ['/order/index'],

@@ -1,3 +1,4 @@
+/* Main styles */
 body {
     padding-top: 80px;
 }
@@ -7,10 +8,25 @@ main {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: normal;
     margin: 0;
     padding-bottom: 15px;
+}
+
+/* Product image gallery */
+.img-small {
+    max-width: 100px;
+    margin: 10px 10px 0 0;
+}
+
+/* Carousel controls */
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .glyphicon-chevron-right,
+.carousel-control .icon-next,
+.carousel-control .icon-prev {
+     position: absolute;
+     top: 50%;
+     z-index: 5;
+     display: inline-block;
 }
 
 .not-set {

@@ -1,28 +1,24 @@
 <?php
 
-use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\CategorySearch */
+/* @var $model common\models\SlideSearch */
 /* @var $form yii\widgets\ActiveForm */
-
-$categories = $model->find()->all();
-$categories = ArrayHelper::map($categories, 'id', 'name');
 ?>
 
 <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <?= Yii::t('category', 'Search Categories') ?>
+                <?= Yii::t('slide', 'Search Slides') ?>
             </a>
         </h4>
     </div>
     <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
         <div class="panel-body">
-            <div class="category-search">
+            <div class="slide-search">
 
                 <?php $form = ActiveForm::begin([
                     'action' => ['index'],
@@ -31,19 +27,15 @@ $categories = ArrayHelper::map($categories, 'id', 'name');
 
                 <?= $form->field($model, 'id') ?>
 
-                <?= $form->field($model, 'parent_id')->dropDownList($categories, [
-                    'prompt' => Yii::t('yii', '(not set)'),
-                ]) ?>
+                <?= $form->field($model, 'sortOrder') ?>
 
-                <?= $form->field($model, 'slug') ?>
+                <?= $form->field($model, 'title') ?>
 
-                <?= $form->field($model, 'name') ?>
-
-                <?= $form->field($model, 'description') ?>
+                <?= $form->field($model, 'body') ?>
 
                 <div class="form-group">
-                    <?= Html::submitButton(Yii::t('category', 'Search'), ['class' => 'btn btn-primary']) ?>
-                    <?= Html::resetButton(Yii::t('category', 'Reset'), ['class' => 'btn btn-default']) ?>
+                    <?= Html::submitButton(Yii::t('slide', 'Search'), ['class' => 'btn btn-primary']) ?>
+                    <?= Html::resetButton(Yii::t('slide', 'Reset'), ['class' => 'btn btn-default']) ?>
                 </div>
 
                 <?php ActiveForm::end(); ?>

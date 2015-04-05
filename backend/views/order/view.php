@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="order-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Yii::t('order', 'Order with ID: {orderID}', ['orderID' => $model->id]) ?></h1>
 
     <p>
         <?= Html::a(Yii::t('order', 'Set as New'), ['new', 'id' => $model->id], [

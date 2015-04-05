@@ -25,6 +25,14 @@ class CategorySearch extends Category
     /**
      * @inheritdoc
      */
+    public function behaviors()
+    {
+        return [];
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function scenarios()
     {
         // bypass scenarios() implementation in the parent class

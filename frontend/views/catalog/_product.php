@@ -3,8 +3,9 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Product */
+/* @var $class */
 ?>
-<div class="col-sm-4 col-lg-4 col-md-4 col-xs-6">
+<div class="<?= $class ?>">
     <div class="panel panel-default panel-product">
         <div class="panel-image">
             <?= Html::img($model->mainImage, [
@@ -25,15 +26,16 @@ use yii\helpers\Html;
                 <?= Html::encode($model->name) ?>
             </h4>
 
-            <p class="text-muted"><?= $model->category->name ?></p>
+            <p class="text-muted">
+                <?= Html::a($model->category->name, ['catalog/category', 'category' => $model->category->slug], [
+                    'class' => 'category-link',
+                ]) ?>
+            </p>
 
             <p><?= Yii::$app->formatter->asCurrency($model->price) ?></p>
 
-            <?= Html::a(Yii::t('catalog', 'View'), ['catalog/view',
-                'slug' => $model->slug,
-                'category' => $model->category->slug,
-            ], [
-                'class' => 'btn btn-default',
+            <?= Html::a(Yii::t('catalog', 'View'), ['catalog/view', 'slug' => $model->slug, 'category' => $model->category->slug], [
+                'class' => 'btn btn-primary',
             ]) ?>
         </div>
     </div>

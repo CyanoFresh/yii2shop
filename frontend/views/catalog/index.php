@@ -43,6 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'layout' => "{summary}\n<div class=\"row\">{items}</div>\n{pager}",
             'dataProvider' => $dataProvider,
             'itemView' => '_product',
+            'viewParams' => ['class' => 'col-sm-4 col-lg-4 col-md-4 col-xs-6'],
             'summaryOptions' => [
                 'class' => 'alert alert-info'
             ],

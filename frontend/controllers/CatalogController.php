@@ -15,6 +15,11 @@ class CatalogController extends Controller
     {
         $dataProvider = new ActiveDataProvider([
             'query' => Product::find(),
+            'sort' => [
+                'defaultOrder' => [
+                    'date' => SORT_DESC,
+                ]
+            ],
             'pagination' => [
                 'forcePageParam' => false,
                 'pageSizeParam' => false,
@@ -41,7 +46,14 @@ class CatalogController extends Controller
 
         $dataProvider = new ActiveDataProvider([
             'query' => $model->getProducts(),
+            'sort' => [
+                // Order by date for default
+                'defaultOrder' => [
+                    'date' => SORT_DESC,
+                ]
+            ],
             'pagination' => [
+                // Prevent creating additional params in the URL. For SEO
                 'forcePageParam' => false,
                 'pageSizeParam' => false,
             ],

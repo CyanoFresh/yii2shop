@@ -1,0 +1,37 @@
+<?php
+
+use yii\helpers\Html;
+use himiklab\sortablegrid\SortableGridView;
+
+/* @var $this yii\web\View */
+/* @var $searchModel common\models\SlideSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+$this->title = Yii::t('slide', 'Slides');
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<div class="slide-index">
+
+    <h1 class="page-header">
+        <?= Html::encode($this->title) ?>
+        <?= Html::a('<span class="glyphicon glyphicon-plus"></span>', ['create'], ['class' => 'btn btn-success pull-right']) ?>
+    </h1>
+
+    <?= $this->render('_search', [
+        'model' => $searchModel
+    ]) ?>
+
+    <?= SortableGridView::widget([
+        'dataProvider' => $dataProvider,
+        // 'filterModel' => $searchModel,
+        'summaryOptions' => ['class' => 'alert alert-info'],
+        'columns' => [
+            'id',
+            'title',
+            'body:html',
+
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]); ?>
+
+</div>
