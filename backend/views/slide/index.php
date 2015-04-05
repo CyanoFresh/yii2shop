@@ -26,11 +26,21 @@ $this->params['breadcrumbs'][] = $this->title;
         // 'filterModel' => $searchModel,
         'summaryOptions' => ['class' => 'alert alert-info'],
         'columns' => [
-            'id',
+            [
+                'attribute' => 'image',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    /** @var $model common\models\Slide */
+                    return Html::img(Yii::$app->urlManagerFrontEnd->baseUrl . '/uploads/slide/' . $model->id . '.jpg', [
+                        'width' => '200px'
+                    ]);
+                },
+            ],
+            // 'id',
             'title',
             'body:html',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'backend\components\ActionButtonColumn'],
         ],
     ]); ?>
 

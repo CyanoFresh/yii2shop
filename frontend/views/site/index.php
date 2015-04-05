@@ -1,11 +1,21 @@
 <?php
 use yii\bootstrap\Carousel;
 use yii\widgets\ListView;
+use common\models\Slide;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = Yii::t('yii', 'Home');
+
+$slides = [];
+foreach (Slide::find()->orderBy('sortOrder')->all() as $slide) {
+    /** @var $slide common\models\Slide */
+    $slides[] = [
+        'content' => \yii\helpers\Html::img(Yii::$app->urlManager->baseUrl . '/uploads/slide/' . $slide->id . '.jpg'),
+        'caption' => \yii\helpers\Html::tag('h1', $slide->title) . $slide->body,
+    ];
+}
 ?>
 
 <?= Carousel::widget([
@@ -14,23 +24,7 @@ $this->title = Yii::t('yii', 'Home');
         '<span class="icon-prev"></span>',
         '<span class="icon-next"></span>'
     ],
-    'items' => [
-        [
-            'content' => '<img src="http://placehold.it/2048x800/000/fff"/>',
-            'caption' => '<h4>This is title</h4><p>This is the caption text</p>',
-            'options' => [],
-        ],
-        [
-            'content' => '<img src="http://placehold.it/2048x800/555/fff"/>',
-            'caption' => '<h4>fsdfsdf</h4><p>sdfsdfsdf</p>',
-            'options' => [],
-        ],
-        [
-            'content' => '<img src="http://placehold.it/2048x800/999/fff"/>',
-            'caption' => '<h4>afsdfasdf</h4><p>asdfasdfasdf</p>',
-            'options' => [],
-        ],
-    ],
+    'items' => $slides,
     'options' => [
         'class' => 'slide',
     ]

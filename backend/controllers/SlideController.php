@@ -7,6 +7,9 @@ use common\models\Slide;
 use common\models\SlideSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\web\UploadedFile;
+use yii\filters\AccessControl;
+use yii\helpers\FileHelper;
 use yii\filters\VerbFilter;
 use himiklab\sortablegrid\SortableGridAction;
 
@@ -18,6 +21,16 @@ class SlideController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['index', 'view', 'create', 'update' , 'delete'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -74,13 +87,22 @@ class SlideController extends Controller
     {
         $model = new Slide();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->image = UploadedFile::getInstance($model, 'image');
+
+            if ($model->validate() && $model->save() && $model->image) {
+                $dir = Yii::getAlias('@frontend/web/uploads/slide');
+                FileHelper::createDirectory($dir);
+
+                $model->image->saveAs($dir . '/' . $model->id . '.jpg');
+
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
+
+        return $this->render('create', [
+            'model' => $model,
+        ]);
     }
 
     /**
@@ -93,13 +115,22 @@ class SlideController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            $model->image = UploadedFile::getInstance($model, 'image');
+
+            if ($model->validate() && $model->save()) {
+                if ($model->image) {
+                    $dir = Yii::getAlias('@frontend/web/uploads/slide');
+                    $model->image->saveAs($dir . '/' . $model->id . '.jpg');
+                }
+            }
+
             return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
         }
+
+        return $this->render('update', [
+            'model' => $model,
+        ]);
     }
 
     /**

@@ -17,6 +17,11 @@ use yii\db\ActiveRecord;
 class Slide extends ActiveRecord
 {
     /**
+     * @var \yii\web\UploadedFile file attribute
+     */
+    public $image;
+
+    /**
      * @inheritdoc
      */
     public static function tableName()
@@ -33,7 +38,8 @@ class Slide extends ActiveRecord
             [['title'], 'required'],
             [['sortOrder'], 'integer'],
             [['body'], 'string'],
-            [['title'], 'string', 'max' => 255]
+            [['title'], 'string', 'max' => 255],
+            [['image'], 'image', 'mimeTypes' => 'image/jpeg'],
         ];
     }
 
@@ -58,6 +64,7 @@ class Slide extends ActiveRecord
         return [
             'id' => Yii::t('slide', 'ID'),
             'sortOrder' => Yii::t('slide', 'Sort Order'),
+            'image' => Yii::t('slide', 'Image'),
             'title' => Yii::t('slide', 'Title'),
             'body' => Yii::t('slide', 'Body'),
         ];

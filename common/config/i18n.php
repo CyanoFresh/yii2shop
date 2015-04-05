@@ -1,7 +1,7 @@
 <?php
 return [
     'sourcePath' => __DIR__. '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR,
-    'languages' => ['ru', 'uk'],
+    'languages' => ['ru'],
     'translator' => 'Yii::t',
     'sort' => false,
     'removeUnused' => false,
