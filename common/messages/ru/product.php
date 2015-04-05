@@ -17,6 +17,8 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    '- select category -' => '- выберите категорию -',
+    '- select status -' => '- выберите статус -',
     'Browse' => 'Выбрать',
     'Category' => 'Категория',
     'Create' => 'Добавить',
@@ -25,6 +27,8 @@ return [
     'Delete' => 'Удалить',
     'Description' => 'Описание',
     'ID' => 'ID',
+    'Image' => 'Фото',
+    'Images' => 'Доп. Фото',
     'Meta Description' => 'Meta Описание',
     'Meta Keywords' => 'Meta Ключевые слова',
     'Name' => 'Название',
@@ -32,13 +36,9 @@ return [
     'Products' => 'Товары',
     'Reset' => 'Очистить',
     'Search' => 'Искать',
-    'Search Categories' => 'Поиск Категорий',
     'Search Products' => 'Поиск Товаров',
-    'Search Statuses' => 'Поиск Статусов',
     'Slug' => 'URL',
     'Status' => 'Статус',
     'Update' => 'Редактировать',
     'Update {modelClass}: ' => 'Редактировать {modelClass}: ',
-    'Image' => 'Фото',
-    'Images' => 'Еще Фото',
 ];

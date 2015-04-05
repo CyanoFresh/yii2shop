@@ -17,6 +17,8 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Are you sure you want to delete this item?' => 'Вы действительно хотите удалить этот заказ?',
+    'Order #{orderID}' => 'Заказ №{orderID}',
     'Data' => 'Дата',
     'Date' => 'Дата',
     'Delete' => 'Удалить',

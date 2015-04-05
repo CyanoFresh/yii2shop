@@ -17,12 +17,19 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Categories' => '',
-    'Home' => '',
-    'Login' => '',
-    'Logout ({username})' => '',
-    'Orders' => '',
-    'Products' => '',
-    'Statuses' => '',
-    'View site' => '',
+    'Body' => 'Содержимое',
+    'Browse' => 'Выбрать',
+    'Create' => 'Добавить',
+    'Create Slide' => 'Добавить Слайд',
+    'Delete' => 'Удалить',
+    'ID' => 'ID',
+    'Image' => 'Изображение',
+    'Reset' => 'Очистить',
+    'Search' => 'Поиск',
+    'Search Slides' => 'Поиск слайдов',
+    'Slides' => 'Слайды',
+    'Sort Order' => 'Порядок сортировки',
+    'Title' => 'Заголовок',
+    'Update' => 'Редактировать',
+    'Update {modelClass}: ' => 'Редактировать {modelClass}: ',
 ];

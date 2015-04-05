@@ -17,6 +17,7 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Are you sure you want to delete this item?' => 'Вы действительно хотите удалить эту запись?',
     '(not set)' => '(не задано)',
     'Delete' => 'Удалить',
     'Home' => 'Главная',

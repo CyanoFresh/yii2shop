@@ -17,6 +17,8 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Are you sure you want to delete this item?' => 'Вы действительно хотите удалить эту категорию?',
+    'Search Categories' => 'Поиск Категорий',
     'Categories' => 'Категории',
     'Create' => 'Добавить',
     'Create Category' => 'Добавить Категорию',
