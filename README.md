@@ -55,7 +55,7 @@ INSTALLATION
 
 ### Install from an Archive File
 
-Extract the archive file downloaded from [github.com](https://github.com/samdark/yii2-shop/archive/master.zip) to
+Extract the archive file downloaded from [github.com](https://github.com/CyanoFresh/yii2shop/archive/master.zip) to
 a directory named `yii2shop` that is directly under the Web root.
 
 Then follow the instructions given in "GETTING STARTED".
@@ -70,7 +70,7 @@ You can then install the application using the following command:
 
 ~~~
 php composer.phar global require "fxp/composer-asset-plugin:1.0.0"
-php composer.phar create-project --prefer-dist --stability=dev yiisoft/yii2-app-advanced advanced
+php composer.phar create-project --prefer-dist --stability=dev cyanofresh/yii2shop yii2shop
 ~~~
 
 
@@ -90,7 +90,7 @@ the installed application. You only need to do these once for all.
 
 To login into the application, you need to use:
 
-Username: `admin`
+Username: `admin` <br> 
 Password: `admin`
 
 You can change it at the `backend/config/params.php` (`users` array)
