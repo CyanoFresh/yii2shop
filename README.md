@@ -90,7 +90,7 @@ the installed application. You only need to do these once for all.
 
 To login into the application, you need to use:
 
-Username: admin
-Password: admin
+Username: `admin`
+Password: `admin`
 
-You can change it at the backend/config/params.php (users array)
+You can change it at the `backend/config/params.php` (`users` array)
