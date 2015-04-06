@@ -111,7 +111,7 @@ AppAsset::register($this);
 
         <div class="footer-bottom">
             <div class="container">
-                <p class="pull-left"><?= Yii::t('frontend', 'Copyright') ?> © <?= Yii::$app->name ?> <?= date('Y') ?>. <?= Yii::t('frontend', 'All right reserved') ?>. </p>
+                <p class="pull-left"><?= Yii::t('frontend', 'Copyright') ?> © <?= Yii::$app->name ?> <?= date('Y') ?>. <?= Yii::t('frontend', 'All rights reserved') ?>. </p>
             </div>
         </div>
         <!--/.footer-bottom-->

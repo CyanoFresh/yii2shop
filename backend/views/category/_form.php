@@ -36,7 +36,9 @@ $categories = ArrayHelper::map($categories, 'id', 'name');
         'prompt' => Yii::t('yii', '(not set)'),
     ]) ?>
 
-    <?= $form->field($model, 'slug')->textInput(['maxlength' => 255]) ?>
+    <?= $form->field($model, 'slug')
+        ->textInput(['maxlength' => 255])
+        ->hint(Yii::t('category', 'If empty it will be generated from name')) ?>
 
     <?= $form->field($model, 'meta_description')->textInput(['maxlength' => 255]) ?>
 

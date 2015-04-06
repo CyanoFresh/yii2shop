@@ -73,7 +73,7 @@ foreach ($image_models as $image) {
                 'content' => Yii::$app->formatter->currencyCode,
             ],
         ],
-    ])->textInput() ?>
+    ])->input('number') ?>
 
     <?= $form->field($model, 'description')->widget(Imperavi::className(), [
         'settings' => [
@@ -102,7 +102,9 @@ foreach ($image_models as $image) {
 
     <?= $form->field($model, 'status_id')->dropDownList($statuses) ?>
 
-    <?= $form->field($model, 'slug')->textInput(['maxlength' => '255']) ?>
+    <?= $form->field($model, 'slug')
+        ->textInput(['maxlength' => 255])
+        ->hint(Yii::t('product', 'If empty it will be generated from name')) ?>
 
     <?= $form->field($model, 'meta_description')->textInput(['maxlength' => true]) ?>
 

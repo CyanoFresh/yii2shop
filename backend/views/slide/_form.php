@@ -14,8 +14,6 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
-    <?= $form->field($model, 'sortOrder')->textInput() ?>
-
     <?= $form->field($model, 'image')->widget(FileInput::className(), [
         'options' => [
             'accept' => 'image/jpeg',
@@ -44,6 +42,10 @@ use yii\widgets\ActiveForm;
             'buttons' => ['html', 'formatting', 'bold', 'italic', 'deleted', 'link'],
         ],
     ]) ?>
+
+    <?= $form->field($model, 'sortOrder')
+        ->input('number')
+        ->hint(Yii::t('slide', 'If empty it will be generated automatically')) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('slide', 'Create') : Yii::t('slide', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
