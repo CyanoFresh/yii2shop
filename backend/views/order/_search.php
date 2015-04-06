@@ -27,7 +27,9 @@ use yii\widgets\ActiveForm;
 
                 <?= $form->field($model, 'id') ?>
 
-                <?= $form->field($model, 'status')->dropDownList($model->getStatuses()) ?>
+                <?= $form->field($model, 'status')->dropDownList($model->getStatuses(), [
+                    'prompt' => Yii::t('order', '- select status -'),
+                ]) ?>
 
                 <?= $form->field($model, 'total_cost') ?>
 

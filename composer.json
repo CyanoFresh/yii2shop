@@ -2,7 +2,7 @@
     "name": "CyanoFresh/yii2shop",
     "description": "Online Shop on Yii2",
     "keywords": ["yii2", "framework", "advanced", "application template", "shop", "online", "e-commerce"],
-    "homepage": "http://shop.solomaha.me/",
+    "homepage": "http://yii2shop.solomaha.me/",
     "type": "project",
     "license": "BSD-3-Clause",
     "support": {
@@ -17,12 +17,12 @@
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
         "omnilight/yii2-shopping-cart": "*",
-        "raoul2000/yii2-bootswatch-asset": "*",
         "kartik-v/yii2-widgets": "*",
         "zelenin/yii2-slug-behavior": "~0.2@stable",
         "vova07/yii2-imperavi-widget": "*",
         "2amigos/yii2-gallery-widget": "*",
-        "himiklab/yii2-sortable-grid-view-widget": "*"
+        "himiklab/yii2-sortable-grid-view-widget": "*",
+        "pheme/yii2-settings": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
