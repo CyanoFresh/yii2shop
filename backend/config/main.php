@@ -32,6 +32,10 @@ return [
         ],
         'urlManager' => [
             'baseUrl' => '//admin.yii2shop/',
+            'rules' => [
+                '<controller:\w+>/<id:\d+>' => '<controller>/view',
+                '<controller:\w+>s' => '<controller>/index',
+            ],
         ],
         'urlManagerFrontEnd' => [
             'class' => 'yii\web\urlManager',
