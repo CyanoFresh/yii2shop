@@ -17,6 +17,7 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'If empty it will be generated automatically' => 'Если не указать - будет сгенерировано автоматически',
     'Body' => 'Содержимое',
     'Browse' => 'Выбрать',
     'Create' => 'Добавить',

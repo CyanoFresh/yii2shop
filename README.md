@@ -3,6 +3,8 @@ Yii2shop project
 
 This is a e-commerce CMS built on Yii2 Advanced Application Template
 
+# Attention! This is an alpha build! Not recommended to use in the production
+
 
 DIRECTORY STRUCTURE
 -------------------
@@ -83,7 +85,12 @@ the installed application. You only need to do these once for all.
 3. Apply migrations with console command `yii migrate`. This will create tables needed for the application to work.
 4. Set document roots of your Web server:
 
-- for frontend `/path/to/yii-application/frontend/web/` and using the URL `http://frontend/`
-- for backend `/path/to/yii-application/backend/web/` and using the URL `http://backend/`
+- for frontend `/path/to/yii2shop/frontend/web/` and using the URL `http://yii2shop.com/`
+- for backend `/path/to/yii2shop/backend/web/` and using the URL `http://admin.yii2shop.com/`
 
-To login into the application, you need to use admin / admin
+To login into the application, you need to use:
+
+Username: admin
+Password: admin
+
+You can change it at the backend/config/params.php (users array)

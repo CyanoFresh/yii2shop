@@ -17,6 +17,7 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'If empty it will be generated from name' => 'Если не указать - будет сгенерировано с имени',
     '- select category -' => '- выберите категорию -',
     '- select status -' => '- выберите статус -',
     'Browse' => 'Выбрать',

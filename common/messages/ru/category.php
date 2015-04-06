@@ -17,8 +17,8 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'If empty it will be generated from name' => 'Если не указать - будет сгенерировано с имени',
     'Are you sure you want to delete this item?' => 'Вы действительно хотите удалить эту категорию?',
-    'Search Categories' => 'Поиск Категорий',
     'Categories' => 'Категории',
     'Create' => 'Добавить',
     'Create Category' => 'Добавить Категорию',
@@ -31,6 +31,7 @@ return [
     'Parent Category' => 'Родительская Категория',
     'Reset' => 'Очистить',
     'Search' => 'Поиск',
+    'Search Categories' => 'Поиск Категорий',
     'Slug' => 'URL',
     'Update' => 'Редактировать',
     'Update {modelClass}: ' => 'Редактировать {modelClass}: ',

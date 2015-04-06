@@ -17,15 +17,10 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'All rights reserved' => 'Все права защищены',
-    'Contact us with preferable method:' => 'Свяжитесь с нами любым из даных способов:',
-    'Copyright' => 'Copyright',
-    'Shop' => 'Магазин',
-    'Stay In Touch' => 'Подписка',
-    'Support' => 'Поддержка',
-    'Cart' => 'Корзина',
-    'Catalog' => 'Каталог',
-    'Home' => 'Главная',
-    'Last products' => 'Последние товары',
-    'The requested page does not exist.' => 'Запрашиваемая страница не существует.',
+    'Incorrect username or password.' => 'Неверный логин или пароль.',
+    'Login' => 'Войти',
+    'Password' => 'Пароль',
+    'Please fill this fields to login: ' => 'Заполните эти поля, чтобы войти',
+    'Remember Me' => 'Запомнить меня',
+    'Username' => 'Логин',
 ];
