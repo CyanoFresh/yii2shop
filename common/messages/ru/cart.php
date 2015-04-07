@@ -23,7 +23,7 @@ return [
     'Continue shopping' => 'Продолжить покупки',
     'Count of products' => 'Количество товаров',
     'It can bu used when you are contact us to know some information about your order' => 'Это может быть использовано при запросе информации о заказе',
-    'Order' => 'Заказать',
+    'Order' => 'Оформить заказ',
     'Ordered successful' => 'Заказ успешно оформлен',
     'Reset' => 'Очистить',
     'Summary' => 'Итог',

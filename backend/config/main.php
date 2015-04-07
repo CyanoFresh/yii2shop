@@ -31,7 +31,6 @@ return [
             'errorAction' => 'site/error',
         ],
         'urlManager' => [
-            'baseUrl' => '//admin.yii2shop/',
             'rules' => [
                 '<controller:\w+>/<id:\d+>' => '<controller>/view',
                 '<controller:\w+>s' => '<controller>/index',
@@ -39,7 +38,6 @@ return [
         ],
         'urlManagerFrontEnd' => [
             'class' => 'yii\web\urlManager',
-            'baseUrl' => '//yii2shop/',
         ],
     ],
     'params' => $params,

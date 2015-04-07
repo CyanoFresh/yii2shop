@@ -14,23 +14,24 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="order-view">
 
-    <h1><?= Yii::t('order', 'Order #{orderID}', ['orderID' => $model->id]) ?></h1>
-
-    <p>
-        <?= Html::a(Yii::t('order', 'Set as New'), ['new', 'id' => $model->id], [
-            'class' => 'btn btn-default'
-        ]) ?>
-        <?= Html::a(Yii::t('order', 'Set as Done'), ['done', 'id' => $model->id], [
-            'class' => 'btn btn-success'
-        ]) ?>
-        <?= Html::a(Yii::t('order', 'Delete'), ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => Yii::t('order', 'Are you sure you want to delete this item?'),
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
+    <h1 class="page-header">
+        <?= Yii::t('order', 'Order #{orderID}', ['orderID' => $model->id]) ?>
+        <div class="btn-group pull-right">
+            <?= Html::a(Yii::t('order', 'Set as New'), ['new', 'id' => $model->id], [
+                'class' => 'btn btn-default'
+            ]) ?>
+            <?= Html::a(Yii::t('order', 'Set as Done'), ['done', 'id' => $model->id], [
+                'class' => 'btn btn-success'
+            ]) ?>
+            <?= Html::a(Yii::t('order', 'Delete'), ['delete', 'id' => $model->id], [
+                'class' => 'btn btn-danger',
+                'data' => [
+                    'confirm' => Yii::t('order', 'Are you sure you want to delete this item?'),
+                    'method' => 'post',
+                ],
+            ]) ?>
+        </div>
+    </h1>
 
     <?= DetailView::widget([
         'model' => $model,

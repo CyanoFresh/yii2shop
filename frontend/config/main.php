@@ -47,10 +47,6 @@ return [
                 '<category:.+>' => 'catalog/category',
             ],
         ],
-        'urlManagerBackEnd' => [
-            'class' => 'yii\web\urlManager',
-            'baseUrl' => '//admin.yii2shop/',
-        ],
     ],
     'params' => $params,
 ];

@@ -18,14 +18,13 @@
  */
 return [
     'All rights reserved' => 'Все права защищены',
+    'Cart' => 'Корзина',
+    'Catalog' => 'Каталог',
     'Contact us with preferable method:' => 'Свяжитесь с нами любым из даных способов:',
-    'Copyright' => 'Copyright',
+    'Home' => 'Главная',
+    'Last products' => 'Последние товары',
     'Shop' => 'Магазин',
     'Stay In Touch' => 'Подписка',
     'Support' => 'Поддержка',
-    'Cart' => 'Корзина',
-    'Catalog' => 'Каталог',
-    'Home' => 'Главная',
-    'Last products' => 'Последние товары',
     'The requested page does not exist.' => 'Запрашиваемая страница не существует.',
 ];

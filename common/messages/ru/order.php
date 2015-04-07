@@ -17,8 +17,7 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Are you sure you want to delete this item?' => 'Вы действительно хотите удалить этот заказ?',
-    'Order #{orderID}' => 'Заказ №{orderID}',
+    '- select status -' => '- выберите статус -',
     'Data' => 'Дата',
     'Date' => 'Дата',
     'Delete' => 'Удалить',
@@ -27,6 +26,7 @@ return [
     'Message' => 'Сообщение',
     'Name' => 'Имя',
     'New' => 'Новый',
+    'Order #{orderID}' => 'Заказ №{orderID}',
     'Orders' => 'Заказы',
     'Phone' => 'Телефон',
     'Processed' => 'Обработан',

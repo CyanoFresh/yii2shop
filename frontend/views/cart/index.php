@@ -10,8 +10,23 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <h1 class="page-header"><?= Html::encode($this->title) ?></h1>
 
+<div class="panel panel-default">
+    <div class="panel-body">
+        <?= Html::a('<span class="glyphicon glyphicon-arrow-left"></span> ' . Yii::t('cart', 'Continue shopping'), ['catalog/index'], [
+            'class' => 'btn btn-primary',
+        ]) ?>
+        <?= Html::a('<span class="glyphicon glyphicon-trash"></span> ' . Yii::t('cart', 'Clear Cart'), ['cart/clear'], [
+            'class' => 'btn btn-default ' . ((Yii::$app->cart->getCount() <= 0) ? 'disabled' : false),
+        ]) ?>
+        <?= Html::a('<span class="glyphicon glyphicon-ok"></span> ' . Yii::t('cart', 'Order'), ['cart/order'], [
+            'class' => 'btn btn-success pull-right ' . ((Yii::$app->cart->getCount() <= 0) ? 'disabled' : false),
+        ]) ?>
+    </div>
+</div>
+
 <div class="row">
     <div class="col-sm-9">
+        <!-- TODO: wrong attribute labels -->
         <?= GridView::widget([
             'dataProvider' => $dataProvider,
             'layout' => '{items}',
@@ -59,22 +74,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]
             ],
         ]) ?>
-
-        <div class="well">
-            <?= Html::a('<span class="glyphicon glyphicon-arrow-left"></span> ' . Yii::t('cart', 'Continue shopping'), ['catalog/index'], [
-                'class' => 'btn btn-default',
-            ]) ?>
-            <?= Html::a('<span class="glyphicon glyphicon-trash"></span> ' . Yii::t('cart', 'Clear Cart'), ['cart/clear'], [
-                'class' => 'btn btn-danger pull-right ' . ((Yii::$app->cart->getCount() <= 0) ? 'disabled' : false),
-            ]) ?>
-        </div>
     </div>
 
     <div class="col-sm-3">
-        <?= Html::a('<span class="glyphicon glyphicon-ok"></span> ' . Yii::t('cart', 'Order'), ['cart/order'], [
-            'class' => 'btn btn-success btn-block ' . ((Yii::$app->cart->getCount() <= 0) ? 'disabled' : false),
-            'style' => 'margin-bottom: 10px;',
-        ]) ?>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <?= Yii::t('cart', 'Summary') ?>

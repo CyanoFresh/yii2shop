@@ -17,19 +17,18 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Are you sure you want to delete this item?' => 'Вы действительно хотите удалить этот слайд?',
-    'Search Statuses' => 'Поиск Слайдов',
+    'Delete' => 'Удалить',
     'Background' => 'Фон',
     'Cancel' => 'Отмена',
     'Choose' => 'Выбрать',
     'Color' => 'Текст',
     'Create' => 'Добавить',
     'Create Status' => 'Добавить Статус',
-    'Delete' => 'Удалить',
     'ID' => 'ID',
     'Name' => 'Название',
     'Reset' => 'Очистить',
     'Search' => 'Поиск',
+    'Search Statuses' => 'Поиск Слайдов',
     'Select color ...' => 'Выбрать цвет ...',
     'Statuses' => 'Статусы',
     'Update' => 'Редактировать',

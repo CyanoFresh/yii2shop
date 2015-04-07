@@ -37,13 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
             ],
             'name',
-            [
-                'attribute' => 'price',
-                'value' => function ($model) {
-                    /** @var $model common\models\Product */
-                    return Yii::$app->formatter->asCurrency($model->price);
-                },
-            ],
+            'price:currency',
             [
                 'attribute' => 'category_id',
                 'value' => function ($model) {

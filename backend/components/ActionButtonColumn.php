@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * TODO: move into common namespace
+ */
 namespace backend\components;
 
 use Yii;
@@ -27,6 +29,7 @@ class ActionButtonColumn extends ActionColumn
 {
     protected function initDefaultButtons()
     {
+        $this->template = '<div class="btn-group">' . $this->template . '</div>';
         if (!isset($this->buttons['view'])) {
             $this->buttons['view'] = function ($url, $model, $key) {
                 return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', $url, array_merge([

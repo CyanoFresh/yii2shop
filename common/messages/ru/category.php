@@ -18,7 +18,6 @@
  */
 return [
     'If empty it will be generated from name' => 'Если не указать - будет сгенерировано с имени',
-    'Are you sure you want to delete this item?' => 'Вы действительно хотите удалить эту категорию?',
     'Categories' => 'Категории',
     'Create' => 'Добавить',
     'Create Category' => 'Добавить Категорию',
