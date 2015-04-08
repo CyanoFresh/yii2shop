@@ -26,10 +26,28 @@ foreach ($image_models as $image) {
     <h1 class="page-header">
         <?= Html::encode($this->title) ?>
         <div class="btn-group pull-right">
-            <?= Html::a('<span class="glyphicon glyphicon-pencil"></span>', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+            <?= Html::a(
+                '<span class="glyphicon glyphicon-eye-open"></span>',
+                Yii::$app->urlManagerFrontEnd->createUrl(['catalog/view', 'slug' => $model->slug, 'category' => $model->category->slug]),
+                [
+                    'class' => 'btn btn-success',
+                    'target' => '_blank',
+                    'data-toggle' => 'tooltip',
+                    'title' => Yii::t('product', 'View on site'),
+                ]) ?>
+            <?= Html::a(
+                '<span class="glyphicon glyphicon-pencil"></span>',
+                ['update', 'id' => $model->id],
+                [
+                    'class' => 'btn btn-primary',
+                    'data-toggle' => 'tooltip',
+                    'title' => Yii::t('product', 'Update'),
+                ]) ?>
             <?= Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $model->id], [
                 'class' => 'btn btn-danger',
+                'title' => Yii::t('product', 'Delete'),
                 'data' => [
+                    'toggle' => 'tooltip',
                     'confirm' => Yii::t('yii', 'Are you sure you want to delete this item?'),
                     'method' => 'post',
                 ],

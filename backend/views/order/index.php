@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'message:ntext',
 
             [
-                'class' => 'backend\components\ActionButtonColumn',
+                'class' => 'common\components\ActionButtonGroupColumn',
                 'template' => '{view} {delete}',
             ],
         ],

@@ -1,8 +1,5 @@
 <?php
-/**
- * TODO: move into common namespace
- */
-namespace backend\components;
+namespace common\components;
 
 use Yii;
 use yii\grid\ActionColumn;
@@ -10,6 +7,7 @@ use yii\helpers\Html;
 
 /**
  * ActionButtonColumn is a ActionColumn for the [[GridView]] widget that displays buttons for viewing and manipulating the items.
+ * Buttons are appended into btn class
  *
  * To add an ActionButtonColumn to the gridview, add it to the [[GridView::columns|columns]] configuration as follows:
  *
@@ -29,7 +27,6 @@ class ActionButtonColumn extends ActionColumn
 {
     protected function initDefaultButtons()
     {
-        $this->template = '<div class="btn-group">' . $this->template . '</div>';
         if (!isset($this->buttons['view'])) {
             $this->buttons['view'] = function ($url, $model, $key) {
                 return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', $url, array_merge([

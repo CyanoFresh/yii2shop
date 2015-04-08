@@ -55,7 +55,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'raw',
             ],
 
-            ['class' => 'backend\components\ActionButtonColumn'],
+            ['class' => 'common\components\ActionButtonGroupColumn'],
         ],
     ]); ?>
 

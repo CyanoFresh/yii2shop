@@ -7,6 +7,11 @@ $config = [
             'cookieValidationKey' => '',
         ],
     ],
+    'urlManagerFrontEnd' => [
+        'class' => 'yii\web\urlManager',
+        // !!! insert frontend url here!
+        'baseUrl' => '//yii2shop/',
+    ],
 ];
 
 if (!YII_ENV_TEST) {

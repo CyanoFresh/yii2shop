@@ -16,11 +16,5 @@ return [
             // for the mailer to send real emails.
             'useFileTransport' => true,
         ],
-        'urlManager' => [
-            'baseUrl' => '//admin.yii2shop/',
-        ],
-        'urlManagerFrontEnd' => [
-            'baseUrl' => '//yii2shop/',
-        ],
     ],
 ];

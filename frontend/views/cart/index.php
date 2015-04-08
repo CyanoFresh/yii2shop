@@ -59,15 +59,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 'price:currency',
                 [
-                    'class' => yii\grid\ActionColumn::className(),
-                    'template' => '{remove}',
-                    'buttons' => [
-                        'remove' => function ($url, $model) {
-                            return Html::a('<span class="glyphicon glyphicon-trash"></span>', ['remove', 'id' => $model->id], [
-                                'class' => 'btn btn-danger btn-sm',
-                            ]);
-                        }
-                    ],
+                    'class' => common\components\ActionButtonGroupColumn::className(),
+                    'template' => '{delete}',
                     'contentOptions' => [
                         'style' => 'width: 10%',
                     ],

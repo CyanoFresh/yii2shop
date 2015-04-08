@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'color',
             'background',
-            ['class' => 'backend\components\ActionButtonColumn'],
+            ['class' => 'common\components\ActionButtonGroupColumn'],
         ],
     ]); ?>
 

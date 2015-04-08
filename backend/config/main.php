@@ -12,7 +12,11 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+        'settings' => [
+            'class' => 'pheme\settings\Module',
+        ],
+    ],
     'components' => [
         'user' => [
             'identityClass' => 'backend\models\User',
@@ -31,13 +35,33 @@ return [
             'errorAction' => 'site/error',
         ],
         'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
             'rules' => [
                 '<controller:\w+>/<id:\d+>' => '<controller>/view',
-                '<controller:\w+>s' => '<controller>/index',
+                '<controller:\w+>' => '<controller>/index',
             ],
         ],
         'urlManagerFrontEnd' => [
             'class' => 'yii\web\urlManager',
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'baseUrl' => '//yii2shop/',
+            'rules' => [
+                // Home
+                '/' => 'site/index',
+                // Cart
+                'cart' => 'cart/index',
+                'cart/order' => 'cart/order',
+                'cart/add/<id:\d+>' => 'cart/add',
+                'cart/remove/<id:\d+>' => 'cart/remove',
+                'cart/clear' => 'cart/clear',
+                // Catalog
+                'catalog/page/<page:\d+>' => 'catalog/index',
+                'catalog' => 'catalog/index',
+                '<category:.+>/<slug>' => 'catalog/view',
+                '<category:.+>' => 'catalog/category',
+            ],
         ],
     ],
     'params' => $params,

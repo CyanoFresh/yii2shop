@@ -30,7 +30,8 @@ return [
             'errorAction' => 'site/error',
         ],
         'urlManager' => [
-            'baseUrl' => '//yii2shop/',
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
             'rules' => [
                 // Home
                 '/' => 'site/index',

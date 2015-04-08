@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'parent_id',
             'slug',
-            ['class' => 'backend\components\ActionButtonColumn'],
+            ['class' => 'common\components\ActionButtonGroupColumn'],
         ],
     ]); ?>
 

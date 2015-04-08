@@ -14,20 +14,12 @@ return [
                 ],
             ],
         ],
-        'formatter' => [
-            'dateFormat' => 'php:Y-m-d',
-            'datetimeFormat' => 'php:Y-m-d H:i',
-            'timeFormat' => 'php:H:i',
-            'currencyCode' => 'USD',
-        ],
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-        ],
         'cart' => [
             'class' => 'yz\shoppingcart\ShoppingCart',
-            'cartId' => 'my_application_cart',
+            'cartId' => 'yii2shop',
+        ],
+        'settings' => [
+            'class' => 'pheme\settings\components\Settings'
         ],
     ],
-    'modules' => [],
 ];
