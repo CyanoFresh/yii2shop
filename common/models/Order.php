@@ -51,24 +51,24 @@ class Order extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('order', 'ID'),
-            'status' => Yii::t('order', 'Status'),
-            'total_cost' => Yii::t('order', 'Total Cost'),
-            'date' => Yii::t('order', 'Date'),
-            'data' => Yii::t('order', 'Data'),
-            'name' => Yii::t('order', 'Name'),
-            'email' => Yii::t('order', 'Email'),
-            'phone' => Yii::t('order', 'Phone'),
-            'message' => Yii::t('order', 'Message'),
+            'id' => Yii::t('common/order', 'ID'),
+            'status' => Yii::t('common/order', 'Status'),
+            'total_cost' => Yii::t('common/order', 'Total Cost'),
+            'date' => Yii::t('common/order', 'Date'),
+            'data' => Yii::t('common/order', 'Data'),
+            'name' => Yii::t('common/order', 'Name'),
+            'email' => Yii::t('common/order', 'Email'),
+            'phone' => Yii::t('common/order', 'Phone'),
+            'message' => Yii::t('common/order', 'Message'),
         ];
     }
 
     public function getStatuses()
     {
         return [
-            self::STATUS_NEW => Yii::t('order', 'New'),
-            self::STATUS_REVIEWED => Yii::t('order', 'Reviewed'),
-            self::STATUS_PROCESSED => Yii::t('order', 'Processed'),
+            self::STATUS_NEW => Yii::t('common/order', 'New'),
+            self::STATUS_REVIEWED => Yii::t('common/order', 'Reviewed'),
+            self::STATUS_PROCESSED => Yii::t('common/order', 'Processed'),
         ];
     }
 

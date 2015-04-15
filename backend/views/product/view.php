@@ -8,7 +8,7 @@ use yii\widgets\DetailView;
 /* @var $model common\models\Product */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('product', 'Products'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('backend/product', 'Products'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 
 $image_models = Image::findAll(['model_id' => $model->id]);
@@ -33,19 +33,21 @@ foreach ($image_models as $image) {
                     'class' => 'btn btn-success',
                     'target' => '_blank',
                     'data-toggle' => 'tooltip',
-                    'title' => Yii::t('product', 'View on site'),
-                ]) ?>
+                    'title' => Yii::t('backend/product', 'View on site'),
+                ]
+            ) ?>
             <?= Html::a(
                 '<span class="glyphicon glyphicon-pencil"></span>',
                 ['update', 'id' => $model->id],
                 [
                     'class' => 'btn btn-primary',
                     'data-toggle' => 'tooltip',
-                    'title' => Yii::t('product', 'Update'),
-                ]) ?>
+                    'title' => Yii::t('backend/product', 'Update'),
+                ]
+            ) ?>
             <?= Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $model->id], [
                 'class' => 'btn btn-danger',
-                'title' => Yii::t('product', 'Delete'),
+                'title' => Yii::t('backend/product', 'Delete'),
                 'data' => [
                     'toggle' => 'tooltip',
                     'confirm' => Yii::t('yii', 'Are you sure you want to delete this item?'),

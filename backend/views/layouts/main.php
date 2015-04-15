@@ -34,22 +34,42 @@ $newOrders = Order::find()->where(['status' => Order::STATUS_NEW])->count();
                 'class' => 'navbar-inverse navbar-fixed-top',
             ],
         ]);
+
+        // Left menu
         $menuItemsLeft = [
-            //['label' => Yii::t('backend', 'Home'), 'url' => ['/site/index']],
+            //['label' => Yii::t('backend', 'Home'), 'url' => ['site/index']],
             ['label' => Yii::t('backend', 'Shop'), 'items' => [
-                ['label' => Yii::t('backend', 'Products'), 'url' => ['/product/index']],
-                ['label' => Yii::t('backend', 'Categories'), 'url' => ['/category/index']],
-                ['label' => Yii::t('backend', 'Statuses'), 'url' => ['/status/index']],
+                ['label' => Yii::t('backend', 'Products'), 'url' => ['product/index']],
+                ['label' => Yii::t('backend', 'Categories'), 'url' => ['category/index']],
+                ['label' => Yii::t('backend', 'Statuses'), 'url' => ['status/index']],
             ]],
             ['label' => Yii::t('backend', 'Slides'), 'url' => ['/slide/index']],
             [
-                'label' => Yii::t('backend', 'Orders') . ' ' . Html::tag('span', $newOrders, ['class' => 'badge']),
-                'url' => ['/order/index'],
+                'label' => Yii::t('backend', 'Orders')
+                    . ' '
+                    . Html::tag('span', $newOrders, ['class' => 'badge']),
+                'url' => ['order/index'],
             ],
         ];
-        $menuItems[] = ['label' => Yii::t('backend', 'View site'), 'url' => Yii::$app->urlManagerFrontEnd->baseUrl, 'options'=>['target' => '_blank'], 'linkOptions' => ['target' => '_blank']];
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav'],
+            'items' => $menuItemsLeft,
+            'encodeLabels' => false,
+        ]);
+
+        // Right menu
+        $menuItems[] = [
+            'label' => Yii::t('backend', 'View site'),
+            'url' => Yii::$app->urlManagerFrontEnd->baseUrl,
+            'options' => [
+                'target' => '_blank'
+            ],
+            'linkOptions' => [
+                'target' => '_blank'
+            ]
+        ];
         if (Yii::$app->user->isGuest) {
-            $menuItems[] = ['label' => Yii::t('backend', 'Login'), 'url' => ['/site/login']];
+            $menuItems[] = ['label' => Yii::t('backend', 'Login'), 'url' => ['site/login']];
         } else {
             $menuItems[] = [
                 'label' => Yii::t('backend', 'Logout ({username})', [
@@ -60,14 +80,10 @@ $newOrders = Order::find()->where(['status' => Order::STATUS_NEW])->count();
             ];
         }
         echo Nav::widget([
-            'options' => ['class' => 'navbar-nav'],
-            'items' => $menuItemsLeft,
-            'encodeLabels' => false,
-        ]);
-        echo Nav::widget([
             'options' => ['class' => 'navbar-nav navbar-right'],
             'items' => $menuItems,
         ]);
+
         NavBar::end();
         ?>
     </header>

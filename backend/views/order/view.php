@@ -9,24 +9,31 @@ use yii\widgets\DetailView;
 /* @var $dataProvider yii\data\ArrayDataProvider */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('order', 'Orders'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('backend/order', 'Orders'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="order-view">
 
     <h1 class="page-header">
-        <?= Yii::t('order', 'Order #{orderID}', ['orderID' => $model->id]) ?>
+        <?= Yii::t('backend/order', 'Order #{orderID}', [
+            'orderID' => $model->id,
+        ]) ?>
+
         <div class="btn-group pull-right">
-            <?= Html::a(Yii::t('order', 'Set as New'), ['new', 'id' => $model->id], [
-                'class' => 'btn btn-default'
+            <?= Html::a(Yii::t('backend/order', 'New'), ['new', 'id' => $model->id], [
+                'class' => 'btn btn-default',
+                'data-toggle' => 'tooltip',
+                'title' => Yii::t('backend/order', 'Set this order as new'),
             ]) ?>
-            <?= Html::a(Yii::t('order', 'Set as Done'), ['done', 'id' => $model->id], [
-                'class' => 'btn btn-success'
+            <?= Html::a(Yii::t('backend/order', 'Done'), ['done', 'id' => $model->id], [
+                'class' => 'btn btn-success',
+                'data-toggle' => 'tooltip',
+                'title' => Yii::t('backend/order', 'Set this order as done'),
             ]) ?>
-            <?= Html::a(Yii::t('order', 'Delete'), ['delete', 'id' => $model->id], [
+            <?= Html::a(Yii::t('backend/order', 'Delete'), ['delete', 'id' => $model->id], [
                 'class' => 'btn btn-danger',
                 'data' => [
-                    'confirm' => Yii::t('order', 'Are you sure you want to delete this item?'),
+                    'confirm' => Yii::t('yii', 'Are you sure you want to delete this item?'),
                     'method' => 'post',
                 ],
             ]) ?>
@@ -43,7 +50,6 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'total_cost:currency',
             'date:datetime',
-            // 'data:ntext',
             'name',
             'email:email',
             'phone',
@@ -51,7 +57,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
-    <h2><?= Yii::t('product', 'Products') ?></h2>
+    <h2><?= Yii::t('backend/order', 'Products') ?></h2>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

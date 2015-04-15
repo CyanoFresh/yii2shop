@@ -70,18 +70,18 @@ class Product extends ActiveRecord implements CartPositionInterface
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('product', 'ID'),
-            'category_id' => Yii::t('product', 'Category'),
-            'status_id' => Yii::t('product', 'Status'),
-            'price' => Yii::t('product', 'Price'),
-            'image' => Yii::t('product', 'Image'),
-            'images' => Yii::t('product', 'Images'),
-            'date' => Yii::t('product', 'Date'),
-            'slug' => Yii::t('product', 'Slug'),
-            'name' => Yii::t('product', 'Name'),
-            'description' => Yii::t('product', 'Description'),
-            'meta_description' => Yii::t('product', 'Meta Description'),
-            'meta_keywords' => Yii::t('product', 'Meta Keywords'),
+            'id' => Yii::t('common/product', 'ID'),
+            'category_id' => Yii::t('common/product', 'Category'),
+            'status_id' => Yii::t('common/product', 'Status'),
+            'price' => Yii::t('common/product', 'Price'),
+            'image' => Yii::t('common/product', 'Image'),
+            'images' => Yii::t('common/product', 'Images'),
+            'date' => Yii::t('common/product', 'Date'),
+            'slug' => Yii::t('common/product', 'Slug'),
+            'name' => Yii::t('common/product', 'Name'),
+            'description' => Yii::t('common/product', 'Description'),
+            'meta_description' => Yii::t('common/product', 'Meta Description'),
+            'meta_keywords' => Yii::t('common/product', 'Meta Keywords'),
         ];
     }
 

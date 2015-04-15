@@ -16,7 +16,7 @@ $categories = ArrayHelper::map($categories, 'id', 'name');
     <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <?= Yii::t('category', 'Search Categories') ?>
+                <?= Yii::t('backend/category', 'Search Categories') ?>
             </a>
         </h4>
     </div>
@@ -42,8 +42,8 @@ $categories = ArrayHelper::map($categories, 'id', 'name');
                 <?= $form->field($model, 'description') ?>
 
                 <div class="form-group">
-                    <?= Html::submitButton(Yii::t('category', 'Search'), ['class' => 'btn btn-primary']) ?>
-                    <?= Html::resetButton(Yii::t('category', 'Reset'), ['class' => 'btn btn-default']) ?>
+                    <?= Html::submitButton(Yii::t('backend/category', 'Search'), ['class' => 'btn btn-primary']) ?>
+                    <?= Html::resetButton(Yii::t('backend/category', 'Reset'), ['class' => 'btn btn-default']) ?>
                 </div>
 
                 <?php ActiveForm::end(); ?>

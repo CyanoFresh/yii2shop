@@ -17,16 +17,20 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Clear Cart' => 'Очистить Коризну',
+    'Total cost' => 'Стоимость',
+    'Your order number: {orderNumber}' => '',
+    'Your request was successfully ordered. We will contact you soon' => 'Ваш заказ был успешно оформлен. Мы скоро с Вами свяжемся',
     'Cart' => 'Корзина',
-    'Clear Cart' => 'Очистить Корзину',
-    'Congratulations! Your request was successfully ordered. We will contact you soon' => 'Поздравляем! Ваш заказ был успешно оформлен. Мы скоро с Вами свяжемся',
+    'Category' => 'Категория',
     'Continue shopping' => 'Продолжить покупки',
     'Count of products' => 'Количество товаров',
-    'It can bu used when you are contact us to know some information about your order' => 'Это может быть использовано при запросе информации о заказе',
-    'Order' => 'Оформить заказ',
+    'Image' => 'Фото',
+    'It can bu used when you are contact us to know some information about your order' => 'Это может быть использовано для получения информации о заказе',
+    'Order' => 'Оформление заказа',
     'Ordered successful' => 'Заказ успешно оформлен',
+    'Price' => 'Цена',
+    'Product' => 'Товар',
     'Reset' => 'Очистить',
-    'Summary' => 'Итог',
-    'Total' => 'Всего',
-    'Your order number: {orderNumber}' => 'Номер Вашего заказа: {orderNumber}',
+    'Summary' => 'Информация',
 ];

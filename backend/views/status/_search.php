@@ -1,5 +1,6 @@
 <?php
 
+use kartik\widgets\ColorInput;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -12,7 +13,7 @@ use yii\widgets\ActiveForm;
     <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <?= Yii::t('status', 'Search Statuses') ?>
+                <?= Yii::t('backend/status', 'Search Statuses') ?>
             </a>
         </h4>
     </div>
@@ -29,13 +30,29 @@ use yii\widgets\ActiveForm;
 
                 <?= $form->field($model, 'name') ?>
 
-                <?= $form->field($model, 'color') ?>
+                <?= $form->field($model, 'color')->widget(ColorInput::className(), [
+                    'options' => [
+                        'placeholder' => Yii::t('backend/status', 'Select color ...'),
+                    ],
+                    'pluginOptions' => [
+                        'chooseText' => Yii::t('backend/status', 'Choose'),
+                        'cancelText' => Yii::t('backend/status', 'Cancel'),
+                    ],
+                ]) ?>
 
-                <?= $form->field($model, 'background') ?>
+                <?= $form->field($model, 'background')->widget(ColorInput::className(), [
+                    'options' => [
+                        'placeholder' => Yii::t('backend/status', 'Select color ...'),
+                    ],
+                    'pluginOptions' => [
+                        'chooseText' => Yii::t('backend/status', 'Choose'),
+                        'cancelText' => Yii::t('backend/status', 'Cancel'),
+                    ],
+                ]) ?>
 
                 <div class="form-group">
-                    <?= Html::submitButton(Yii::t('status', 'Search'), ['class' => 'btn btn-primary']) ?>
-                    <?= Html::resetButton(Yii::t('status', 'Reset'), ['class' => 'btn btn-default']) ?>
+                    <?= Html::submitButton(Yii::t('backend/status', 'Search'), ['class' => 'btn btn-primary']) ?>
+                    <?= Html::resetButton(Yii::t('backend/status', 'Reset'), ['class' => 'btn btn-default']) ?>
                 </div>
 
                 <?php ActiveForm::end(); ?>

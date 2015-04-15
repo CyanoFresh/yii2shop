@@ -20,8 +20,8 @@ use yii\widgets\ActiveForm;
         ],
         'pluginOptions' => [
             'showUpload' => false,
-            'browseLabel' => Yii::t('slide', 'Browse'),
-            'removeLabel' => Yii::t('slide', 'Delete'),
+            'browseLabel' => Yii::t('backend/slide', 'Browse'),
+            'removeLabel' => Yii::t('backend/slide', 'Delete'),
             'removeClass' => 'btn btn-danger',
             'initialPreview' => $model->isNewRecord ? false : [
                 Html::img(Yii::$app->urlManagerFrontEnd->baseUrl . '/uploads/slide/' . $model->id . '.jpg', ['class' => 'file-preview-image'])
@@ -45,10 +45,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'sortOrder')
         ->input('number')
-        ->hint(Yii::t('slide', 'If empty it will be generated automatically')) ?>
+        ->hint(Yii::t('backend/slide', 'If empty it will be generated automatically')) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('slide', 'Create') : Yii::t('slide', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton(
+            $model->isNewRecord ? Yii::t('backend/slide', 'Create') : Yii::t('backend/slide', 'Save'),
+            ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']
+        ) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

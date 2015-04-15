@@ -1,9 +1,7 @@
 <?php
-use yii\helpers\Html;
-
 /* @var $this yii\web\View */
 
-$this->title = Yii::t('backend', 'Home');
+$this->title = Yii::t('yii', 'Home');
 ?>
 <div class="site-index">
     <div class="panel panel-default">

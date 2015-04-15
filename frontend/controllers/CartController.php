@@ -64,11 +64,12 @@ class CartController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             $model->status = 1;
             $model->total_cost = Yii::$app->cart->getCost();
-            $model->date = Yii::$app->formatter->asDatetime(time());
+            $model->date = date('Y-m-d H:i');
             $model->data = Yii::$app->cart->getSerialized();
 
             if ($model->validate() && $model->save()) {
                 Yii::$app->cart->removeAll();
+
                 return $this->render('orderSuccess', [
                     'model' => $model,
                 ]);

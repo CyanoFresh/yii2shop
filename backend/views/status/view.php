@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model common\models\Status */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('status', 'Statuses'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('backend/status', 'Statuses'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="status-view">

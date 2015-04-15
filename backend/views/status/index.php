@@ -7,13 +7,13 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\StatusSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('status', 'Statuses');
+$this->title = Yii::t('backend/status', 'Statuses');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="status-index">
 
     <h1 class="page-header">
-        <?= Html::encode($this->title) ?>
+        <?= $this->title ?>
         <?= Html::a('<span class="glyphicon glyphicon-plus"></span>', ['create'], ['class' => 'btn btn-success pull-right']) ?>
     </h1>
 

@@ -5,14 +5,14 @@ use yii\widgets\ListView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('catalog', 'Catalog');
+$this->title = Yii::t('frontend/catalog', 'Catalog');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="row">
     <div class="col-lg-3 col-md-3 col-sm-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <?= Yii::t('catalog', 'Categories') ?>
+                <?= Yii::t('frontend/catalog', 'Categories') ?>
             </div>
 
             <div class="panel-body">
@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <h1><?= Html::encode($this->title) ?></h1>
 
         <div class="well">
-            <?= Yii::t('catalog', 'Order by:') ?>
+            <?= Yii::t('frontend/catalog', 'Order by:') ?>
             <?= $dataProvider->sort->link('name', [
                 'class' => 'btn btn-primary btn-sm'
             ]) ?>

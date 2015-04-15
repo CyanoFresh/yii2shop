@@ -7,14 +7,19 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\CategorySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('category', 'Categories');
+$this->title = Yii::t('backend/category', 'Categories');
+
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="category-index">
 
     <h1 class="page-header">
         <?= Html::encode($this->title) ?>
-        <?= Html::a('<span class="glyphicon glyphicon-plus"></span>', ['create'], ['class' => 'btn btn-success pull-right']) ?>
+        <?= Html::a(
+            '<span class="glyphicon glyphicon-plus"></span>',
+            ['create'],
+            ['class' => 'btn btn-success pull-right']
+        ) ?>
     </h1>
 
     <?= $this->render('_search', [
@@ -23,7 +28,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        // 'filterModel' => $searchModel,
         'summaryOptions' => ['class' => 'alert alert-info'],
         'columns' => [
             'id',

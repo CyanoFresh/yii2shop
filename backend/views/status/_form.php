@@ -17,22 +17,29 @@ use kartik\widgets\ColorInput;
 
     <?= $form->field($model, 'color')->widget(ColorInput::className(), [
         'options' => [
-            'placeholder' => Yii::t('status', 'Select color ...'),
+            'placeholder' => Yii::t('backend/status', 'Select color ...'),
+        ],
+        'pluginOptions' => [
+            'chooseText' => Yii::t('backend/status', 'Choose'),
+            'cancelText' => Yii::t('backend/status', 'Cancel'),
         ],
     ]) ?>
 
     <?= $form->field($model, 'background')->widget(ColorInput::className(), [
         'options' => [
-            'placeholder' => Yii::t('status', 'Select color ...'),
+            'placeholder' => Yii::t('backend/status', 'Select color ...'),
         ],
         'pluginOptions' => [
-            'chooseText' => Yii::t('status', 'Choose'),
-            'cancelText' => Yii::t('status', 'Cancel'),
-        ]
+            'chooseText' => Yii::t('backend/status', 'Choose'),
+            'cancelText' => Yii::t('backend/status', 'Cancel'),
+        ],
     ]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('status', 'Create') : Yii::t('status', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton(
+            $model->isNewRecord ? Yii::t('backend/status', 'Create') : Yii::t('backend/status', 'Save'),
+            ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']
+        ) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

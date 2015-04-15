@@ -86,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Product image gallery */
 .img-small {
     max-width: 100px;
-    margin: 10px 10px 0 0;
+    margin: 10px 10px 10px 0;
 }
 
 /* Carousel controls */
@@ -154,6 +154,37 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: lighter;
     height: 100%;
     padding: 3px 10px;
+}
+
+/*.product-title {*/
+    /*font-size: 30px;*/
+    /*font-weight: 600;*/
+    /*letter-spacing: 0.25px;*/
+    /*line-height: 1;*/
+    /*margin-bottom: 0;*/
+    /*text-transform: uppercase;*/
+/*}*/
+
+/*.product-code {*/
+    /*font-family: oswald, Helvetica Neue, Arial, sans-serif;*/
+    /*font-size: 14px;*/
+    /*font-weight: lighter;*/
+    /*letter-spacing: 1px;*/
+    /*margin: 0 0 10px;*/
+    /*padding: 0;*/
+    /*text-transform: uppercase;*/
+/*}*/
+
+.product-price {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+.product-header {
+    margin: 0;
+    padding: 0;
 }
 
 .product-images {

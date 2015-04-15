@@ -41,8 +41,8 @@ foreach ($image_models as $image) {
         ],
         'pluginOptions' => [
             'showUpload' => false,
-            'browseLabel' => Yii::t('product', 'Browse'),
-            'removeLabel' => Yii::t('product', 'Delete'),
+            'browseLabel' => Yii::t('backend/product', 'Browse'),
+            'removeLabel' => Yii::t('backend/product', 'Delete'),
             'removeClass' => 'btn btn-danger',
             'initialPreview' => $model->isNewRecord ? false : [
                 Html::img($model->getMainImage('urlManagerFrontEnd'), ['class' => 'file-preview-image'])
@@ -58,8 +58,8 @@ foreach ($image_models as $image) {
         'pluginOptions' => [
             'maxFileCount' => 10,
             'showUpload' => false,
-            'browseLabel' => Yii::t('product', 'Browse'),
-            'removeLabel' => Yii::t('product', 'Delete'),
+            'browseLabel' => Yii::t('backend/product', 'Browse'),
+            'removeLabel' => Yii::t('backend/product', 'Delete'),
             'removeClass' => 'btn btn-danger',
             'initialPreview' => $images,
         ],
@@ -104,14 +104,17 @@ foreach ($image_models as $image) {
 
     <?= $form->field($model, 'slug')
         ->textInput(['maxlength' => 255])
-        ->hint(Yii::t('product', 'If empty it will be generated from name')) ?>
+        ->hint(Yii::t('backend/product', 'If empty it will be generated from name')) ?>
 
     <?= $form->field($model, 'meta_description')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'meta_keywords')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('product', 'Create') : Yii::t('product', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton(
+            $model->isNewRecord ? Yii::t('backend/product', 'Create') : Yii::t('backend/product', 'Save'),
+            ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']
+        ) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

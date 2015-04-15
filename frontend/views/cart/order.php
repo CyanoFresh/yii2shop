@@ -7,11 +7,15 @@ use yii\helpers\Html;
 /* @var $model common\models\Order */
 /* @var $dataProvider yii\data\ArrayDataProvider */
 
-$this->title = Yii::t('cart', 'Order');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('cart', 'Cart'), 'url' => ['index']];
+$this->title = Yii::t('frontend/cart', 'Order');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('frontend/cart', 'Cart'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<h1 class="page-header"><?= Html::encode($this->title) ?></h1>
+
+<h1 class="page-header">
+    <?= $this->title ?>
+</h1>
+
 <div class="row">
     <div class="col-sm-9">
         <?= GridView::widget([
@@ -20,7 +24,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'columns' => [
                 [
                     'attribute' => 'image',
-                    'format' => 'raw',
+                    'label' => Yii::t('frontend/cart', 'Image'),
+                    'format' => 'html',
                     'value' => function ($model) {
                         return Html::img($model->mainImage, [
                             'width' => 80,
@@ -32,27 +37,31 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 [
                     'attribute' => 'name',
-                    'format' => 'raw',
+                    'label' => Yii::t('frontend/cart', 'Product'),
+                    'format' => 'html',
                     'value' => function ($model) {
                         return Html::a($model->name, ['catalog/view', 'slug' => $model->slug, 'category' => $model->category->slug]);
                     },
                 ],
-                'price:currency',
+                [
+                    'attribute' => 'category_id',
+                    'label' => Yii::t('frontend/cart', 'Category'),
+                    'format' => 'html',
+                    'value' => function ($model) {
+                        return Html::a($model->category->name, ['catalog/category', 'category' => $model->category->slug]);
+                    },
+                ],
+                [
+                    'attribute' => 'price',
+                    'format' => 'currency',
+                    'label' => Yii::t('frontend/cart', 'Price'),
+                ],
             ],
         ]) ?>
     </div>
 
     <div class="col-sm-3">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <?= Yii::t('cart', 'Summary') ?>
-            </div>
-            <div class="panel-body">
-                <?= Yii::t('cart', 'Total') ?>: <b><?= Yii::$app->formatter->asCurrency(Yii::$app->cart->getCost()) ?></b>
-                <br>
-                <?= Yii::t('cart', 'Count of products') ?>: <b><?= Yii::$app->cart->getCount() ?></b>
-            </div>
-        </div>
+        <?= $this->render('_summary') ?>
     </div>
 </div>
 
@@ -64,8 +73,8 @@ $this->params['breadcrumbs'][] = $this->title;
 <?= $form->field($model, 'message')->textarea(['rows' => 6]) ?>
 
 <div class="form-group">
-    <?= Html::submitButton(Yii::t('cart', 'Order'), ['class' => 'btn btn-default']) ?>
-    <?= Html::resetButton(Yii::t('cart', 'Reset'), ['class' => 'btn btn-danger']) ?>
+    <?= Html::submitButton(Yii::t('frontend/cart', 'Order'), ['class' => 'btn btn-primary']) ?>
+    <?= Html::resetButton(Yii::t('frontend/cart', 'Reset'), ['class' => 'btn btn-default']) ?>
 </div>
 
 <?php ActiveForm::end() ?>

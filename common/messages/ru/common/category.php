@@ -17,13 +17,11 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'All rights reserved' => 'Все права защищены',
-    'Cart' => 'Корзина',
-    'Catalog' => 'Каталог',
-    'Contact us with preferable method:' => 'Свяжитесь с нами любым из даных способов:',
-    'Home' => 'Главная',
-    'Shop' => 'Магазин',
-    'Stay In Touch' => 'Подписка',
-    'Support' => 'Поддержка',
-    'The requested page does not exist.' => 'Запрашиваемая страница не существует.',
+    'Description' => 'Описание',
+    'ID' => 'ID',
+    'Meta Description' => 'Meta Описание',
+    'Meta Keywords' => 'Meta Ключевые слова',
+    'Name' => 'Название',
+    'Parent Category' => 'Родительская категория',
+    'Slug' => 'URL',
 ];

@@ -38,14 +38,17 @@ $categories = ArrayHelper::map($categories, 'id', 'name');
 
     <?= $form->field($model, 'slug')
         ->textInput(['maxlength' => 255])
-        ->hint(Yii::t('category', 'If empty it will be generated from name')) ?>
+        ->hint(Yii::t('backend/category', 'If empty it will be generated from name')) ?>
 
     <?= $form->field($model, 'meta_description')->textInput(['maxlength' => 255]) ?>
 
     <?= $form->field($model, 'meta_keywords')->textInput(['maxlength' => 255]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('category', 'Create') : Yii::t('category', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton(
+            $model->isNewRecord ? Yii::t('backend/category', 'Create') : Yii::t('backend/category', 'Save'),
+            ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']
+        ) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

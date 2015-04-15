@@ -17,13 +17,8 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'All rights reserved' => 'Все права защищены',
-    'Cart' => 'Корзина',
-    'Catalog' => 'Каталог',
-    'Contact us with preferable method:' => 'Свяжитесь с нами любым из даных способов:',
-    'Home' => 'Главная',
-    'Shop' => 'Магазин',
-    'Stay In Touch' => 'Подписка',
-    'Support' => 'Поддержка',
-    'The requested page does not exist.' => 'Запрашиваемая страница не существует.',
+    'Background' => 'Фон',
+    'Color' => 'Текст',
+    'ID' => 'ID',
+    'Name' => 'Название',
 ];

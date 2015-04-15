@@ -17,10 +17,9 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Incorrect username or password.' => 'Неверный логин или пароль.',
+    'Incorrect username or password.' => 'Неверный логин или пароль',
     'Login' => 'Войти',
     'Password' => 'Пароль',
-    'Please fill this fields to login: ' => 'Заполните эти поля, чтобы войти',
-    'Remember Me' => 'Запомнить меня',
+    'Remember Me' => 'Запомнить',
     'Username' => 'Логин',
 ];

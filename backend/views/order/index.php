@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\OrderSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('order', 'Orders');
+$this->title = Yii::t('backend/order', 'Orders');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="order-index">

@@ -17,9 +17,11 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    '(not set)' => '(не задано)',
-    'Delete' => 'Удалить',
-    'Home' => 'Главная',
-    'Update' => 'Редактировать',
-    'View' => 'Смотреть',
+    'Add To Cart' => 'Добавить в корзину',
+    'Catalog' => 'Каталог',
+    'Categories' => 'Категории',
+    'Category' => 'Категория',
+    'Order by:' => 'Сортировать по:',
+    'Share' => 'Поделиться',
+    'View' => 'Подробенее',
 ];

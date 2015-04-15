@@ -50,13 +50,13 @@ class Category extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('category', 'ID'),
-            'parent_id' => Yii::t('category', 'Parent Category'),
-            'slug' => Yii::t('category', 'Slug'),
-            'name' => Yii::t('category', 'Name'),
-            'description' => Yii::t('category', 'Description'),
-            'meta_description' => Yii::t('category', 'Meta Description'),
-            'meta_keywords' => Yii::t('category', 'Meta Keywords'),
+            'id' => Yii::t('common/category', 'ID'),
+            'parent_id' => Yii::t('common/category', 'Parent Category'),
+            'slug' => Yii::t('common/category', 'Slug'),
+            'name' => Yii::t('common/category', 'Name'),
+            'description' => Yii::t('common/category', 'Description'),
+            'meta_description' => Yii::t('common/category', 'Meta Description'),
+            'meta_keywords' => Yii::t('common/category', 'Meta Keywords'),
         ];
     }
 

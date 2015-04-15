@@ -17,21 +17,14 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'If empty it will be generated from name' => 'Если не указать - будет сгенерировано с имени',
     'Categories' => 'Категории',
-    'Create' => 'Добавить',
-    'Create Category' => 'Добавить Категорию',
-    'Delete' => 'Удалить',
-    'Description' => 'Описание',
-    'ID' => 'ID',
-    'Meta Description' => 'Meta Описание',
-    'Meta Keywords' => 'Meta Ключевые слова',
-    'Name' => 'Название',
-    'Parent Category' => 'Родительская Категория',
+    'Create' => 'Создать',
+    'Create Category' => 'Создать категорию',
+    'If empty it will be generated from name' => 'Если пусто - будет сегенерировано с имени',
     'Reset' => 'Очистить',
+    'Save' => 'Сохранить',
     'Search' => 'Поиск',
     'Search Categories' => 'Поиск Категорий',
-    'Slug' => 'URL',
     'Update' => 'Редактировать',
-    'Update {modelClass}: ' => 'Редактировать {modelClass}: ',
+    'Update Category: ' => 'Редактировать Категорию: ',
 ];

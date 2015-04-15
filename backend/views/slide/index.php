@@ -7,13 +7,14 @@ use himiklab\sortablegrid\SortableGridView;
 /* @var $searchModel common\models\SlideSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('slide', 'Slides');
+$this->title = Yii::t('backend/slide', 'Slides');
+
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="slide-index">
 
     <h1 class="page-header">
-        <?= Html::encode($this->title) ?>
+        <?= $this->title ?>
         <?= Html::a('<span class="glyphicon glyphicon-plus"></span>', ['create'], ['class' => 'btn btn-success pull-right']) ?>
     </h1>
 
@@ -23,7 +24,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= SortableGridView::widget([
         'dataProvider' => $dataProvider,
-        // 'filterModel' => $searchModel,
         'summaryOptions' => ['class' => 'alert alert-info'],
         'columns' => [
             [
@@ -36,7 +36,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     ]);
                 },
             ],
-            // 'id',
             'title',
             'body:html',
 

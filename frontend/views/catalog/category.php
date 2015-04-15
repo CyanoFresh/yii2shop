@@ -1,6 +1,5 @@
 <?php
 use yii\helpers\Html;
-use yii\helpers\HtmlPurifier;
 use yii\widgets\ListView;
 
 /* @var $this yii\web\View */
@@ -9,7 +8,7 @@ use yii\widgets\ListView;
 
 $this->title = $model->name;
 
-$this->params['breadcrumbs'][] = ['label' => Yii::t('catalog', 'Catalog'), 'url' => ['catalog/index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('frontend/catalog', 'Catalog'), 'url' => ['catalog/index']];
 $this->params['breadcrumbs'][] = $this->title;
 
 $this->registerMetaTag(['name' => 'description', 'content' => $model->meta_description]);
@@ -19,7 +18,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => $model->meta_keywords
     <div class="col-lg-3 col-md-3 col-sm-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <?= Yii::t('catalog', 'Categories') ?>
+                <?= Yii::t('frontend/catalog', 'Categories') ?>
             </div>
 
             <div class="panel-body">
@@ -31,11 +30,12 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => $model->meta_keywords
         <h1><?= Html::encode($this->title) ?></h1>
 
         <blockquote>
-            <?= HtmlPurifier::process($model->description) ?>
+            <?= $model->description ?>
         </blockquote>
 
         <div class="well">
-            <?= Yii::t('catalog', 'Order by:') ?>
+            <?= Yii::t('frontend/catalog', 'Order by:') ?>
+
             <?= $dataProvider->sort->link('name', [
                 'class' => 'btn btn-primary btn-sm'
             ]) ?>

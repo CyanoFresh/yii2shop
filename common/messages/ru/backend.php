@@ -17,14 +17,13 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Shop' => 'Магазин',
-    'Slides' => 'Слайды',
     'Categories' => 'Категории',
-    'Home' => 'Главная',
     'Login' => 'Войти',
     'Logout ({username})' => 'Выйти ({username})',
     'Orders' => 'Заказы',
     'Products' => 'Товары',
+    'Shop' => 'Магазин',
+    'Slides' => 'Слайдер',
     'Statuses' => 'Статусы',
     'View site' => 'На сайт',
 ];

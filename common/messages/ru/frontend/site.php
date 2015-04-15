@@ -17,13 +17,8 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'All rights reserved' => 'Все права защищены',
-    'Cart' => 'Корзина',
-    'Catalog' => 'Каталог',
-    'Contact us with preferable method:' => 'Свяжитесь с нами любым из даных способов:',
     'Home' => 'Главная',
-    'Shop' => 'Магазин',
-    'Stay In Touch' => 'Подписка',
-    'Support' => 'Поддержка',
-    'The requested page does not exist.' => 'Запрашиваемая страница не существует.',
+    'Last products' => 'Последние товары',
+    'Please contact us if you think this is a server error. Thank you.' => 'Пожалуйста, свжитесь с нами если Вы считаете, что это серверная ошибка. Спасибо.',
+    'The above error occurred while the Web server was processing your request.' => 'Эта ошибка произошла при обработке вашего запроса',
 ];

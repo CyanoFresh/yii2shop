@@ -17,13 +17,16 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'All rights reserved' => 'Все права защищены',
-    'Cart' => 'Корзина',
-    'Catalog' => 'Каталог',
-    'Contact us with preferable method:' => 'Свяжитесь с нами любым из даных способов:',
-    'Home' => 'Главная',
-    'Shop' => 'Магазин',
-    'Stay In Touch' => 'Подписка',
-    'Support' => 'Поддержка',
-    'The requested page does not exist.' => 'Запрашиваемая страница не существует.',
+    '- select status -' => '- выберите статус -',
+    'Delete' => 'Удалить',
+    'Done' => 'Выполнено',
+    'New' => 'Новый',
+    'Order #{orderID}' => 'Заказ №{orderID}',
+    'Orders' => 'Заказы',
+    'Products' => 'Товары',
+    'Reset' => 'Очистить',
+    'Search' => 'Поиск',
+    'Search Orders' => 'Поиск заказов',
+    'Set this order as done' => 'Пометить этот заказ как выполненый',
+    'Set this order as new' => 'Пометить этот заказ как новый',
 ];

@@ -15,8 +15,9 @@ use yii\helpers\Html;
             <?php if ($model->status_id): ?>
                 <div class="promotion">
                     <span class="status"
-                          style="color: <?= $model->status->color ?>; background: <?= $model->status->background ?>">
-                        <?= Html::encode($model->status->name) ?>
+                          style="color: <?= $model->status->color ?>;
+                              background: <?= $model->status->background ?>">
+                        <?= $model->status->name ?>
                     </span>
                 </div>
             <?php endif ?>
@@ -34,7 +35,7 @@ use yii\helpers\Html;
 
             <p><?= Yii::$app->formatter->asCurrency($model->price) ?></p>
 
-            <?= Html::a(Yii::t('catalog', 'View'), ['catalog/view', 'slug' => $model->slug, 'category' => $model->category->slug], [
+            <?= Html::a(Yii::t('frontend/catalog', 'View'), ['catalog/view', 'slug' => $model->slug, 'category' => $model->category->slug], [
                 'class' => 'btn btn-primary',
             ]) ?>
         </div>

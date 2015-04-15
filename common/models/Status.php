@@ -42,10 +42,10 @@ class Status extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('status', 'ID'),
-            'name' => Yii::t('status', 'Name'),
-            'color' => Yii::t('status', 'Color'),
-            'background' => Yii::t('status', 'Background'),
+            'id' => Yii::t('common/status', 'ID'),
+            'name' => Yii::t('common/status', 'Name'),
+            'color' => Yii::t('common/status', 'Color'),
+            'background' => Yii::t('common/status', 'Background'),
         ];
     }
 

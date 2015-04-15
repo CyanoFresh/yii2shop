@@ -62,11 +62,11 @@ class Slide extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('slide', 'ID'),
-            'sortOrder' => Yii::t('slide', 'Sort Order'),
-            'image' => Yii::t('slide', 'Image'),
-            'title' => Yii::t('slide', 'Title'),
-            'body' => Yii::t('slide', 'Body'),
+            'id' => Yii::t('common/slide', 'ID'),
+            'sortOrder' => Yii::t('common/slide', 'Sort Order'),
+            'image' => Yii::t('common/slide', 'Image'),
+            'title' => Yii::t('common/slide', 'Title'),
+            'body' => Yii::t('common/slide', 'Body'),
         ];
     }
 }

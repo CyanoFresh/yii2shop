@@ -3,12 +3,10 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use frontend\assets\AppAsset;
-//use raoul2000\bootswatch\BootswatchAsset;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-//BootswatchAsset::$theme = 'Flatly';
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -52,7 +50,6 @@ AppAsset::register($this);
 
     <main>
         <?= $content ?>
-        <div class="push"></div>
     </main>
 
     <footer>

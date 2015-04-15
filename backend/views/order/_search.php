@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
     <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <?= Yii::t('order', 'Search Orders') ?>
+                <?= Yii::t('backend/order', 'Search Orders') ?>
             </a>
         </h4>
     </div>
@@ -28,7 +28,7 @@ use yii\widgets\ActiveForm;
                 <?= $form->field($model, 'id') ?>
 
                 <?= $form->field($model, 'status')->dropDownList($model->getStatuses(), [
-                    'prompt' => Yii::t('order', '- select status -'),
+                    'prompt' => Yii::t('backend/order', '- select status -'),
                 ]) ?>
 
                 <?= $form->field($model, 'total_cost') ?>
@@ -46,8 +46,8 @@ use yii\widgets\ActiveForm;
                 <?php // echo $form->field($model, 'message') ?>
 
                 <div class="form-group">
-                    <?= Html::submitButton(Yii::t('order', 'Search'), ['class' => 'btn btn-primary']) ?>
-                    <?= Html::resetButton(Yii::t('order', 'Reset'), ['class' => 'btn btn-default']) ?>
+                    <?= Html::submitButton(Yii::t('backend/order', 'Search'), ['class' => 'btn btn-primary']) ?>
+                    <?= Html::resetButton(Yii::t('backend/order', 'Reset'), ['class' => 'btn btn-default']) ?>
                 </div>
 
                 <?php ActiveForm::end(); ?>
