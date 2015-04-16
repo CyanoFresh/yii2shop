@@ -17,9 +17,9 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Add To Cart' => 'Добавить в Корзину',
-    'Catalog' => 'Каталог',
-    'Categories' => 'Категории',
-    'Order by:' => 'Сортировать по:',
-    'View' => 'Смотреть',
+    'All Orders' => 'Все Заказы',
+    'Create Category' => 'Добавить Категорию',
+    'Create Product' => 'Добавить Товар',
+    'New Orders' => 'Новые Заказы',
+    'Short Actions' => 'Быстрое Добавление',
 ];

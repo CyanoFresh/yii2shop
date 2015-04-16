@@ -17,6 +17,7 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Date Created' => 'Дата добавления',
     'Add To Cart' => 'Добавить в корзину',
     'Catalog' => 'Каталог',
     'Categories' => 'Категории',

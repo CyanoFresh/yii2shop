@@ -18,8 +18,8 @@
  */
 return [
     'Categories' => 'Категории',
-    'Create' => 'Создать',
-    'Create Category' => 'Создать категорию',
+    'Create' => 'Добавить',
+    'Create Category' => 'Добавить категорию',
     'If empty it will be generated from name' => 'Если пусто - будет сегенерировано с имени',
     'Reset' => 'Очистить',
     'Save' => 'Сохранить',

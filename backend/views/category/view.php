@@ -17,6 +17,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <div class="btn-group pull-right">
             <?= Html::a(
+                '<span class="glyphicon glyphicon-eye-open"></span>',
+                Yii::$app->urlManagerFrontEnd->createUrl(['catalog/category', 'category' => $model->slug]),
+                [
+                    'class' => 'btn btn-success',
+                    'target' => '_blank',
+                    'data-toggle' => 'tooltip',
+                    'title' => Yii::t('backend/product', 'View on site'),
+                ]
+            ) ?>
+            <?= Html::a(
                 '<span class="glyphicon glyphicon-pencil"></span>',
                 ['update', 'id' => $model->id],
                 ['class' => 'btn btn-primary']

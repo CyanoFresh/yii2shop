@@ -1,6 +1,5 @@
 <?php
 
-use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
@@ -8,11 +7,14 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = Yii::t('backend/order', 'Orders');
+
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="order-index">
 
-    <h1 class="page-header"><?= Html::encode($this->title) ?></h1>
+    <h1 class="page-header">
+        <?= $this->title ?>
+    </h1>
 
     <?= $this->render('_search', ['model' => $searchModel]); ?>
 
@@ -20,6 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'summaryOptions' => ['class' => 'alert alert-info'],
         'rowOptions' => function ($model) {
+            /** @var $model common\models\Order */
             if ($model->status === 1) {
                 return ['class' => 'success'];
             } elseif ($model->status === 2) {

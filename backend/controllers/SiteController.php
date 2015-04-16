@@ -1,7 +1,11 @@
 <?php
 namespace backend\controllers;
 
+use common\models\Category;
+use common\models\Order;
+use common\models\Product;
 use Yii;
+use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use backend\models\LoginForm;
@@ -55,8 +59,18 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        // TODO: Backend homepage
-        return $this->render('index');
+        $dataProvider = new ActiveDataProvider([
+            'query' => Order::find()->limit(10)->where(['status' => Order::STATUS_NEW]),
+        ]);
+
+        $productModel = new Product(['scenario' => 'create']);
+        $productModel->date = date('Y-m-d H:i');
+
+        return $this->render('index', [
+            'dataProvider' => $dataProvider,
+            'categoryModel' => new Category(),
+            'productModel' => $productModel,
+        ]);
     }
 
     public function actionLogin()

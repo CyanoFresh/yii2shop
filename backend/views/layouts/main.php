@@ -100,7 +100,7 @@ $newOrders = Order::find()->where(['status' => Order::STATUS_NEW])->count();
     <footer>
         <div class="container">
             <hr>
-            <?= Yii::$app->name ?> &copy; <?= date('Y') ?>
+            Yii2Shop &copy; <?= date('Y') ?>
         </div>
     </footer>
 

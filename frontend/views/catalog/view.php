@@ -79,9 +79,13 @@ foreach (Image::findAll(['model_id' => $model->id]) as $image) {
             <div class="col-sm-4">
                 <h4><?= Yii::t('frontend/catalog', 'Share') ?></h4>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-4">
                 <h4><?= Yii::t('frontend/catalog', 'Category') ?></h4>
-                <?= Html::a($model->category->name, ['catalog/category', 'category' => $model->category->slug])  ?>
+                <?= Html::a($model->category->name, ['catalog/category', 'category' => $model->category->slug]) ?>
+            </div>
+            <div class="col-sm-4">
+                <h4><?= Yii::t('frontend/catalog', 'Date Created') ?></h4>
+                <?= Yii::$app->formatter->asDatetime($model->date) ?>
             </div>
         </div>
     </div>

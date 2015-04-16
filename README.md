@@ -1,9 +1,30 @@
 Yii2shop project
 ===================================
 
-This is a e-commerce CMS built on Yii2 Advanced Application Template
+This is a e-commerce showcase CMS built on Yii2 Advanced Application Template. It includes some main features from big
+e-commerce CMSs like OpenCart
 
 # Attention! This is an alpha build! Not recommended to use in the production
+
+FEATURES
+--------
+Because it's only e-commerce showcase only several features available:
+* Admin Panel - Backend
+* Home page with latest products
+* Catalog with sorting and product preview
+* Categories support
+* SEO-friendly URLs (with slugs like domain.com/category-name/product-name)
+* Special statuses for products (example: In stock, Discount, etc.)
+* Image gallery in product view
+* And a lot of! See demo for more details, maybe I forget something
+
+DEMO
+----
+[FrontEnd Demo](http://yii2shop.solomaha.me/)
+[BackEnd Demo](http://admin.yii2shop.solomaha.me/)
+Backend user:
+Login: `admin`
+Password: `admin`
 
 
 DIRECTORY STRUCTURE
