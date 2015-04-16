@@ -18,8 +18,5 @@ return [
             'class' => 'yz\shoppingcart\ShoppingCart',
             'cartId' => 'yii2shop',
         ],
-        'settings' => [
-            'class' => 'pheme\settings\components\Settings'
-        ],
     ],
 ];
