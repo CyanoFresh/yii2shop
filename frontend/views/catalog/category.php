@@ -9,7 +9,17 @@ use yii\widgets\ListView;
 $this->title = $model->name;
 
 $this->params['breadcrumbs'][] = ['label' => Yii::t('frontend/catalog', 'Catalog'), 'url' => ['catalog/index']];
-$this->params['breadcrumbs'][] = $this->title;
+
+if ($model->parent) {
+    $this->title .= ' - ' . $model->parent->name;
+
+    $this->params['breadcrumbs'][] = [
+        'label' => $model->parent->name,
+        'url' => ['catalog/category', 'category' => $model->parent->slug]
+    ];
+}
+
+$this->params['breadcrumbs'][] = $model->name;
 
 $this->registerMetaTag(['name' => 'description', 'content' => $model->meta_description]);
 $this->registerMetaTag(['name' => 'keywords', 'content' => $model->meta_keywords]);
@@ -32,6 +42,15 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => $model->meta_keywords
         <blockquote>
             <?= $model->description ?>
         </blockquote>
+
+        <div class="child-categories">
+            <?php foreach ($model->categories as $category): ?>
+                <?= Html::a($category->name, ['catalog/category', 'category' => $category->slug], [
+                    'class' => 'btn btn-lg btn-primary col-sm-4',
+                ]) ?>
+            <?php endforeach ?>
+            <div class="clearfix"></div>
+        </div>
 
         <div class="well">
             <?= Yii::t('frontend/catalog', 'Order by:') ?>

@@ -1,15 +1,22 @@
 <?php
 use common\models\Image;
+use dosamigos\gallery\Gallery;
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Product */
 
-$this->title = $model->name;
+$this->title = $model->name . ' - ' . $model->category->name;
 
 $this->params['breadcrumbs'][] = ['label' => Yii::t('frontend/catalog', 'Catalog'), 'url' => ['catalog/index']];
+
+if ($model->category->parent) {
+    $this->title .= ' - ' . $model->category->parent->name;
+    $this->params['breadcrumbs'][] = ['label' => $model->category->parent->name, 'url' => ['catalog/category', 'category' => $model->category->parent->slug]];
+}
+
 $this->params['breadcrumbs'][] = ['label' => $model->category->name, 'url' => ['catalog/category', 'category' => $model->category->slug]];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = $model->name;
 
 // Meta tags
 $this->registerMetaTag(['name' => 'description', 'content' => $model->meta_description]);
@@ -34,7 +41,7 @@ foreach (Image::findAll(['model_id' => $model->id]) as $image) {
 
 <div class="row">
     <div class="col-sm-6">
-        <?= dosamigos\gallery\Gallery::widget([
+        <?= Gallery::widget([
             'items' => $galleryItems,
             'id' => 'product-gallery-links',
         ]) ?>
@@ -78,6 +85,7 @@ foreach (Image::findAll(['model_id' => $model->id]) as $image) {
         <div class="row">
             <div class="col-sm-4">
                 <h4><?= Yii::t('frontend/catalog', 'Share') ?></h4>
+                <!-- TODO: share buttons -->
             </div>
             <div class="col-sm-4">
                 <h4><?= Yii::t('frontend/catalog', 'Category') ?></h4>
