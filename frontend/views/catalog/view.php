@@ -85,7 +85,9 @@ foreach (Image::findAll(['model_id' => $model->id]) as $image) {
         <div class="row">
             <div class="col-sm-4">
                 <h4><?= Yii::t('frontend/catalog', 'Share') ?></h4>
-                <!-- TODO: share buttons -->
+                <?= ijackua\sharelinks\ShareLinks::widget([
+                    'viewName' => '@frontend/views/catalog/shareLinks',
+                ]) ?>
             </div>
             <div class="col-sm-4">
                 <h4><?= Yii::t('frontend/catalog', 'Category') ?></h4>

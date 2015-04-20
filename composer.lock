@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c0874c8f8ff9fee61b19c9d6fa944960",
+    "hash": "b2102ad8ce5478cb3150580d4cc4f478",
     "packages": [
         {
             "name": "2amigos/yii2-gallery-widget",
@@ -389,6 +389,44 @@
             "time": "2015-03-20 11:07:08"
         },
         {
+            "name": "components/flag-icon-css",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lipis/flag-icon-css.git",
+                "reference": "db9d702ac15e74a84d5d859c9f3b1ce4c1882304"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lipis/flag-icon-css/zipball/db9d702ac15e74a84d5d859c9f3b1ce4c1882304",
+                "reference": "db9d702ac15e74a84d5d859c9f3b1ce4c1882304",
+                "shasum": ""
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "name": "flag-icon-css",
+                    "files": [
+                        "less/**",
+                        "css/**",
+                        "flags/**"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Panayiotis Lipiridis (Lipis)",
+                    "email": "lipiridis@gmail.com"
+                }
+            ],
+            "description": "CSS for vector based country flags",
+            "time": "2015-03-26 16:41:06"
+        },
+        {
             "name": "ezyang/htmlpurifier",
             "version": "v4.6.0",
             "source": {
@@ -433,6 +471,54 @@
             "time": "2013-11-30 08:25:19"
         },
         {
+            "name": "fortawesome/font-awesome",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FortAwesome/Font-Awesome.git",
+                "reference": "8e037207b4fa22ff5498ce35278940653ad485b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/8e037207b4fa22ff5498ce35278940653ad485b0",
+                "reference": "8e037207b4fa22ff5498ce35278940653ad485b0",
+                "shasum": ""
+            },
+            "require-dev": {
+                "jekyll": "1.0.2",
+                "lessc": "1.4.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OFL-1.1",
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Gandy",
+                    "email": "dave@fontawesome.io",
+                    "homepage": "http://twitter.com/davegandy",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The iconic font and CSS framework",
+            "homepage": "http://fontawesome.io/",
+            "keywords": [
+                "FontAwesome",
+                "awesome",
+                "bootstrap",
+                "font",
+                "icon"
+            ],
+            "time": "2015-04-18 01:01:18"
+        },
+        {
             "name": "himiklab/yii2-sortable-grid-view-widget",
             "version": "dev-master",
             "source": {
@@ -475,6 +561,53 @@
                 "yii2"
             ],
             "time": "2015-01-27 09:34:59"
+        },
+        {
+            "name": "ijackua/yii2-sharelinks-widget",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/iJackUA/yii2-sharelinks-widget.git",
+                "reference": "1937730d9b2c954e31dc8a1548a95d81ceb54095"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/iJackUA/yii2-sharelinks-widget/zipball/1937730d9b2c954e31dc8a1548a95d81ceb54095",
+                "reference": "1937730d9b2c954e31dc8a1548a95d81ceb54095",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "ijackua\\sharelinks\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Evgeniy Kuzminov",
+                    "email": "kyzminov@gmail.com",
+                    "homepage": "http://stdout.in/",
+                    "role": "Author"
+                }
+            ],
+            "description": "Yii2 widget for popular social networks 'share link' generation",
+            "homepage": "https://github.com/iJackUA/yii2-sharelinks-widget",
+            "keywords": [
+                "extension",
+                "network",
+                "share",
+                "social",
+                "widget",
+                "yii"
+            ],
+            "time": "2014-03-29 16:53:12"
         },
         {
             "name": "kartik-v/bootstrap-fileinput",
@@ -606,6 +739,54 @@
                 "select"
             ],
             "time": "2015-03-04 12:15:28"
+        },
+        {
+            "name": "kartik-v/yii2-icons",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-icons.git",
+                "reference": "bce5f85e8e9b76a11e34dd43156f2db4bdb566a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-icons/zipball/bce5f85e8e9b76a11e34dd43156f2db4bdb566a5",
+                "reference": "bce5f85e8e9b76a11e34dd43156f2db4bdb566a5",
+                "shasum": ""
+            },
+            "require": {
+                "components/flag-icon-css": "*",
+                "fortawesome/font-awesome": "*",
+                "kartik-v/yii2-krajee-base": "*",
+                "yiisoft/yii2-jui": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "kartik\\icons\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD 3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://demos.krajee.com/"
+                }
+            ],
+            "description": "Set of icon frameworks for use in Yii Framework 2.0",
+            "homepage": "https://github.com/kartik-v/yii2-icons",
+            "keywords": [
+                "extension",
+                "font",
+                "icon",
+                "yii",
+                "yii2"
+            ],
+            "time": "2015-04-21 15:15:10"
         },
         {
             "name": "kartik-v/yii2-krajee-base",
@@ -1637,90 +1818,6 @@
             "time": "2015-04-06 08:15:34"
         },
         {
-            "name": "pheme/yii2-settings",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phemellc/yii2-settings.git",
-                "reference": "5f8c182a6af5ca6f9953e42ad7bcf71db1c2b78c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phemellc/yii2-settings/zipball/5f8c182a6af5ca6f9953e42ad7bcf71db1c2b78c",
-                "reference": "5f8c182a6af5ca6f9953e42ad7bcf71db1c2b78c",
-                "shasum": ""
-            },
-            "require": {
-                "pheme/yii2-toggle-column": "*",
-                "yiisoft/yii2": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "pheme\\settings\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Aris Karageorgos",
-                    "email": "aris@phe.me"
-                }
-            ],
-            "description": "Yii2 Database settings",
-            "keywords": [
-                "Settings",
-                "config",
-                "yii2"
-            ],
-            "time": "2015-02-18 04:40:12"
-        },
-        {
-            "name": "pheme/yii2-toggle-column",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phemellc/yii2-toggle-column.git",
-                "reference": "8a55ee30d60c53c2b543d4c42ade77a0bf6b3b35"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phemellc/yii2-toggle-column/zipball/8a55ee30d60c53c2b543d4c42ade77a0bf6b3b35",
-                "reference": "8a55ee30d60c53c2b543d4c42ade77a0bf6b3b35",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "\\pheme\\grid\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Aris Karageorgos",
-                    "email": "aris@phe.me"
-                }
-            ],
-            "description": "Provides a toggle data column and action",
-            "keywords": [
-                "column",
-                "extension",
-                "toggle",
-                "yii2"
-            ],
-            "time": "2015-02-13 02:36:29"
-        },
-        {
             "name": "swiftmailer/swiftmailer",
             "version": "5.x-dev",
             "source": {
@@ -2247,6 +2344,90 @@
             "time": "2015-03-30 08:56:14"
         },
         {
+            "name": "pheme/yii2-settings",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phemellc/yii2-settings.git",
+                "reference": "5f8c182a6af5ca6f9953e42ad7bcf71db1c2b78c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phemellc/yii2-settings/zipball/5f8c182a6af5ca6f9953e42ad7bcf71db1c2b78c",
+                "reference": "5f8c182a6af5ca6f9953e42ad7bcf71db1c2b78c",
+                "shasum": ""
+            },
+            "require": {
+                "pheme/yii2-toggle-column": "*",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "pheme\\settings\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Aris Karageorgos",
+                    "email": "aris@phe.me"
+                }
+            ],
+            "description": "Yii2 Database settings",
+            "keywords": [
+                "Settings",
+                "config",
+                "yii2"
+            ],
+            "time": "2015-02-18 04:40:12"
+        },
+        {
+            "name": "pheme/yii2-toggle-column",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phemellc/yii2-toggle-column.git",
+                "reference": "8a55ee30d60c53c2b543d4c42ade77a0bf6b3b35"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phemellc/yii2-toggle-column/zipball/8a55ee30d60c53c2b543d4c42ade77a0bf6b3b35",
+                "reference": "8a55ee30d60c53c2b543d4c42ade77a0bf6b3b35",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "\\pheme\\grid\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aris Karageorgos",
+                    "email": "aris@phe.me"
+                }
+            ],
+            "description": "Provides a toggle data column and action",
+            "keywords": [
+                "column",
+                "extension",
+                "toggle",
+                "yii2"
+            ],
+            "time": "2015-02-13 02:36:29"
+        },
+        {
             "name": "phpspec/php-diff",
             "version": "dev-master",
             "source": {
@@ -2476,7 +2657,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "zelenin/yii2-slug-behavior": 0
+        "zelenin/yii2-slug-behavior": 0,
+        "kartik-v/yii2-icons": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -21,7 +21,9 @@
         "zelenin/yii2-slug-behavior": "~0.2@stable",
         "vova07/yii2-imperavi-widget": "*",
         "2amigos/yii2-gallery-widget": "*",
-        "himiklab/yii2-sortable-grid-view-widget": "*"
+        "himiklab/yii2-sortable-grid-view-widget": "*",
+        "ijackua/yii2-sharelinks-widget": "*",
+        "kartik-v/yii2-icons": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

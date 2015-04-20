@@ -17,11 +17,15 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Date Created' => 'Дата добавления',
+    'Share on Facebook' => 'Поделиться в Facebook',
+    'Share on Google Plus' => 'Поделиться в Google+',
+    'Share on Twitter' => 'Поделиться в Твиттере',
+    'Share on VK' => 'Поделиться в ВКонтакте',
     'Add To Cart' => 'Добавить в корзину',
     'Catalog' => 'Каталог',
     'Categories' => 'Категории',
     'Category' => 'Категория',
+    'Date Created' => 'Дата добавления',
     'Order by:' => 'Сортировать по:',
     'Share' => 'Поделиться',
     'View' => 'Подробенее',
