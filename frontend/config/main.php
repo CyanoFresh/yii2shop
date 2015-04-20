@@ -33,8 +33,9 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                // Home
+                // Site
                 '/' => 'site/index',
+                'sitemap.xml' => 'sitemap/index',
                 // Cart
                 'cart' => 'cart/index',
                 'cart/order' => 'cart/order',

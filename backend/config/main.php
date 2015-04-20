@@ -48,8 +48,9 @@ return [
             'showScriptName' => false,
             'baseUrl' => '//yii2shop/',
             'rules' => [
-                // Home
+                // Site
                 '/' => 'site/index',
+                'sitemap.xml' => 'sitemap/index',
                 // Cart
                 'cart' => 'cart/index',
                 'cart/order' => 'cart/order',
