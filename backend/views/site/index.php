@@ -52,7 +52,14 @@ $this->title = Yii::t('yii', 'Home');
 
         [
             'class' => 'common\components\ActionButtonGroupColumn',
-            'template' => '{view} {delete}',
+            'template' => '{view}',
+            'buttons' => [
+                'view' => function ($url, $model, $key) {
+                    return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', ['order/view', 'id' => $model->id], [
+                        'class' => 'btn btn-xs btn-primary'
+                    ]);
+                },
+            ],
         ],
     ],
 ]) ?>
