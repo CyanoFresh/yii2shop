@@ -48,7 +48,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'parent_id',
+            [
+                'attribute' => 'parent_id',
+                'format' => 'raw',
+                'value' => $model->parent
+                    ? Html::a($model->parent->name, ['category/view', 'id' => $model->parent->id])
+                    : null,
+            ],
             'slug',
             'name',
             'description:html',

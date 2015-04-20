@@ -46,7 +46,9 @@ $categories = ArrayHelper::map($categories, 'id', 'name');
 
     <div class="form-group">
         <?= Html::submitButton(
-            $model->isNewRecord ? Yii::t('backend/category', 'Create') : Yii::t('backend/category', 'Save'),
+            $model->isNewRecord
+                ? Yii::t('backend/category', 'Create')
+                : Yii::t('backend/category', 'Save'),
             ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']
         ) ?>
     </div>

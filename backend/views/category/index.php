@@ -32,7 +32,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             'id',
             'name',
-            'parent_id',
+            [
+                'attribute' => 'parent_id',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    if ($model->parent) {
+                        return Html::a($model->parent->name, ['category/view', 'id' => $model->parent->id]);
+                    }
+                },
+            ],
             'slug',
             ['class' => 'common\components\ActionButtonGroupColumn'],
         ],
