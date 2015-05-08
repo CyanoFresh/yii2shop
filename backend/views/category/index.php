@@ -39,6 +39,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     if ($model->parent) {
                         return Html::a($model->parent->name, ['category/view', 'id' => $model->parent->id]);
                     }
+
+                    return false;
                 },
             ],
             'slug',
