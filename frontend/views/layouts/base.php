@@ -80,10 +80,13 @@ AppAsset::register($this);
                             <li><?= Html::a(Yii::t('frontend', 'Cart'), ['cart/index']) ?></li>
                         </ul>
                     </div>
+
+                    <!--
+                    TODO: Subscribe form
                     <div class="col-sm-4">
                         <h3><?= Yii::t('frontend', 'Stay In Touch') ?></h3>
-                        <!-- TODO: Subscribe form -->
                     </div>
+                    -->
                 </div>
                 <!--/.row-->
             </div>
