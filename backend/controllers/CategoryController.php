@@ -15,6 +15,9 @@ use yii\filters\VerbFilter;
  */
 class CategoryController extends Controller
 {
+    /**
+     * @inheritdoc
+     */
     public function behaviors()
     {
         return [

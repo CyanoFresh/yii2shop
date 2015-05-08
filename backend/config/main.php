@@ -12,11 +12,7 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [
-        'settings' => [
-            'class' => 'pheme\settings\Module',
-        ],
-    ],
+    'modules' => [],
     'components' => [
         'user' => [
             'identityClass' => 'backend\models\User',

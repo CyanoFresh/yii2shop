@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="product-index">
 
     <h1 class="page-header">
-        <?= Html::encode($this->title) ?>
+        <?= $this->title ?>
         <?= Html::a('<span class="glyphicon glyphicon-plus"></span>', ['create'], ['class' => 'btn btn-success pull-right']) ?>
     </h1>
 
