@@ -3,6 +3,9 @@ Yii2Shop
 
 This is e-commerce application built on Yii2. It is not full e-commerce - it is showcase
 
+This project has been temporary stopped. For actual code see [app built on this shop](https://github.com/CyanoFresh/solomashka)
+===================================
+
 FEATURES
 --------
 
